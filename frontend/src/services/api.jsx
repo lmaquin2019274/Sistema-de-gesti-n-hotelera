@@ -28,3 +28,24 @@ export const register = async (data) => {
         }
     }
 }
+
+export const getHotelsDetails = async (hotelId) => {
+    try{
+        return await apiClient.get(`/hotel/${hotelId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getHotels = async () => {
+    try{
+        return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
