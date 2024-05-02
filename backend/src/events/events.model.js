@@ -10,11 +10,14 @@ const eventSchema = mongoose.Schema({
     hotel: {
         type: String,
     },
-    dates: {
-        type: String,
+    date: {
+        type: Date,
     },
     capacity: {
         type: Number,
+    },
+    imgUrl: {
+        type: String
     }
 })
 
