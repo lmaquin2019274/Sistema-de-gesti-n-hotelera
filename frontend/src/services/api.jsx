@@ -28,3 +28,73 @@ export const register = async (data) => {
         }
     }
 }
+export const getHotelsDetails = async (hotelId) => {
+    try{
+        return await apiClient.get(`/hotel/${hotelId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const putUserSettings = async () => {
+    try{
+        return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getUserSetting = async () => {
+    try{
+        return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const patchChangePassword = async () => {
+    try{
+        return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getHotels = async () => {
+    try{
+        return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getRooms = async () => {
+    try{
+        return await apiClient.get('/room')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getRoomsDetails = async (roomId) => {
+    try{
+        return await apiClient.get(`/room/${roomId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}

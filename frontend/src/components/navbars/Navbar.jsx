@@ -10,15 +10,15 @@ const NavLogo = () => {
                 width='100%'
                 height='100%'
                 src={logo}
-                alt="Escudo Kinal"
+                alt="Logo"
             />
         </div>
     )
 }
 
-const NavButton = ({text, onClickHandler}) => {
-    return(
-        <span className="nav-button">
+const NavButton = ({ text, onClickHandler }) => {
+    return (
+        <span className="nav-button" onClick={onClickHandler}>
             {text}
         </span>
     )
@@ -37,8 +37,12 @@ export const Navbar = () => {
         navigate('/settings')
     }
 
-    const handleNavigateToChannlesPage = () => {
-        navigate('/channles')
+    const handleNavigateToHotelsPage = () => {
+        navigate('/hotel')
+    }
+
+    const handleNavigateToRoomsPage = () => {
+        navigate('/room')
     }
 
     const handleLogout = () => {
@@ -49,9 +53,10 @@ export const Navbar = () => {
         <div className="nav-container">
             <NavLogo/>
             <div className="nav-buttons-container">
-                <NavButton text={'Browse'} onClickHandler={handleNavigateToChannlesPage}/>
+                <NavButton text={'Browse hotels'} onClickHandler={handleNavigateToHotelsPage}/>
+                <NavButton text={'Browse rooms'} onClickHandler={handleNavigateToRoomsPage}/>
                 {!isLogger ? (
-                    <NavButton text='Login' onClickHandler={handleNavigateToAuthPage}/>
+                    <NavButton text='Log in' onClickHandler={handleNavigateToAuthPage}/>
                 ) : (
                     <div>
                         <NavButton text='My account' onClickHandler={handleNavigateToSettingPage}/>

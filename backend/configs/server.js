@@ -9,6 +9,7 @@ import authRoutes from '../src/auth/auth.routes.js'
 import hotelRoutes from '../src/hotels/hotels.routes.js'
 import roomRoutes from '../src/rooms/rooms.routes.js'
 import eventRoutes from '../src/events/events.routes.js'
+import settingsRoutes from '../src/settings/settings.routes.js'
 
 import { dbConnection } from './mongo.js'
 
@@ -20,6 +21,7 @@ class Server{
         this.hotelPath = '/hotels/v1/hotel'
         this.roomPath = '/hotels/v1/room'
         this.eventPath = '/hotels/v1/event'
+        this.settingsPath = '/hotels/v1/settings'
 
         this.middlewares()
         this.conectarDB()
@@ -44,6 +46,7 @@ class Server{
         this.app.use(this.hotelPath, hotelRoutes);
         this.app.use(this.roomPath, roomRoutes);
         this.app.use(this.eventPath, eventRoutes);
+        this.app.use(this.settingsPath, settingsRoutes);
     }
 
     listen(){
