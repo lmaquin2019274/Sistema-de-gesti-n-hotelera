@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const hotelSchema = mongoose.Schema({
     name: {
-        type: String
+        type: String,
     },
     location: {
         type: String,
@@ -13,12 +13,14 @@ const hotelSchema = mongoose.Schema({
     comforts: {
         type: String,
     },
-    name: {
-        type: String,
-        default: 'none'
-    },
     capacity: {
-        type: Number,
+        type: String,
+    },
+    imgUrl: {
+        type: String,
+    },
+    coordenadas:{
+        type: String,
     }
 })
 
