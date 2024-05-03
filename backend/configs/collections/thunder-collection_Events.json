@@ -1,0 +1,103 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Events",
+    "collectionId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+    "dateExported": "2024-05-03T01:24:14.015Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e52235da-17c1-44e6-88bb-82b5ee0e7746",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "listEvents",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-02T23:52:46.143Z",
+            "modified": "2024-05-02T23:53:13.854Z",
+            "headers": []
+        },
+        {
+            "_id": "92ac6e0e-3949-4c3e-bd41-775078f30dad",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "createEvent",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-02T23:53:29.729Z",
+            "modified": "2024-05-03T00:09:58.062Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Jose\",\n  \"description\": \"Con bar\",\n  \"hotel\": \"Hilton\",\n  \"date\": \"2024-6-25\",\n  \"capacity\": \"2\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6d7ca234-a673-4b63-b12d-5a738347aa99",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "updateEvent",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events/6634280a704fe67399047eb8",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-02T23:58:39.325Z",
+            "modified": "2024-05-03T00:06:05.402Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Joju\",\n  \"description\": \"con piscina\",\n  \"hotel\": \"chihiro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6158f233-7478-459c-9931-5f8c7f8e588c",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "deleteEvent",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events/66342a9793883bc904c2f91d",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-03T00:13:34.946Z",
+            "modified": "2024-05-03T00:13:53.738Z",
+            "headers": []
+        },
+        {
+            "_id": "2ac45332-deb1-46ca-944e-51bad2c4965b",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "findEventsByHotel",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events/hotel",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-05-03T00:18:36.915Z",
+            "modified": "2024-05-03T00:31:04.108Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"hotel\": \"chihiro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f275b707-914d-4d69-8d0c-f77021a955be",
+            "colId": "dd94993a-c5b9-41c9-91c9-1c8421f740e9",
+            "containerId": "",
+            "name": "findEventsByName",
+            "url": "http://127.0.0.1:8080/hotels/v1/event/events/name",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-05-03T00:32:54.407Z",
+            "modified": "2024-05-03T00:33:48.992Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Jose\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "K12klfJRFYu85J460802wngbIlSl2EYRuO_GJg-0Vzy9y74b9FsXBhL7MSWX11TWuGEZgh1OjTjPfka56HrVrw"
+}

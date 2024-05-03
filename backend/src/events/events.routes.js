@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { listEvents, createEvent } from "./events.controller.js";
+import { listEvents, createEvent, updateEvent, deleteEvent, findEventsByHotel, findEventsByName } from "./events.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 //import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -19,6 +19,14 @@ router.post(
     ], createEvent);
 
 router.get("/events", listEvents);
+
+router.put("/events/:id", updateEvent);
+
+router.delete("/events/:id", deleteEvent);
+
+router.post("/events/hotel", findEventsByHotel); 
+
+router.post("/events/name", findEventsByName);
 
 export default router;
 
