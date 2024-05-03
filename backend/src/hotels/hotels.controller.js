@@ -2,7 +2,7 @@ import hotels from '../hotels/hotels.model'
 import bcryptjs from 'bcryptjs'
 import user from '../users/user.model.js'
 
-// Crear un hotel
+
 export const createHotel = async (req, res) => {
     try {
         const { name, location, category, comforts, capacity } = req.body;
@@ -20,22 +20,22 @@ export const createHotel = async (req, res) => {
         return res.status(201).json(savedHotel);
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Something went wrong');
+        return res.status(500).send('Error creating');
     }
 };
 
-// Obtener todos los hoteles
+
 export const getAllHotels = async (req, res) => {
     try {
         const hotels = await Hotel.find();
         return res.status(200).json(hotels);
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Something went wrong');
+        return res.status(500).send('The data could not be obtained');
     }
 };
 
-// Obtener un hotel por ID
+
 export const getHotelById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -50,7 +50,7 @@ export const getHotelById = async (req, res) => {
     }
 };
 
-// Actualizar un hotel por ID
+
 export const updateHotelById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -65,7 +65,7 @@ export const updateHotelById = async (req, res) => {
         }, { new: true });
 
         if (!updatedHotel) {
-            return res.status(404).send('Hotel not found');
+            return res.status(404).send('The hotel has not been located');
         }
 
         return res.status(200).json(updatedHotel);
@@ -75,17 +75,19 @@ export const updateHotelById = async (req, res) => {
     }
 };
 
-// Eliminar un hotel por ID
+
 export const deleteHotelById = async (req, res) => {
     try {
         const { id } = req.params;
         const deletedHotel = await Hotel.findByIdAndDelete(id);
+        
         if (!deletedHotel) {
-            return res.status(404).send('Hotel not found');
+            throw new Error('Hotel not found');
         }
-        return res.status(204).send();
+        
+        res.sendStatus(204);
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Something went wrong');
+        res.status(500).send('Something went wrong');
     }
-};
+}
