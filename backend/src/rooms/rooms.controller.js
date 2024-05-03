@@ -91,6 +91,38 @@ export const getRoomByName = async (req, res = response) => {
     }
 }
 
+
+export const getRoomsByHotelId = async (req, res) => {
+    const { hotelId } = req.params;
+
+    try {
+        const hotel = await Hotel.findById(hotelId);
+
+        if (!hotel) {
+            return res.status(404).send('Hotel not found');
+        }
+
+        const rooms = await Room.find({ hotel: hotel._id });
+        const roomsWithHotelName = rooms.map(room => ({
+            hotel: hotel.name,
+            name: room.name,
+            available: room.available,
+            price: room.price,
+            capacity: room.capacity,
+            imgUrl: room.imgUrl,
+            reservations: room.reservations,   
+        }));
+
+        return res.status(200).json({ total: roomsWithHotelName.length, rooms: roomsWithHotelName });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Something went wrong');
+    }
+};
+
+
+
+
 // Editar Habitación
 export const updateRoom = async (req, res = response) => {
     const { id } = req.params;

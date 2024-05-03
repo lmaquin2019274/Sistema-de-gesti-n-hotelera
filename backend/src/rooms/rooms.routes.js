@@ -4,6 +4,7 @@ import {
     createRoom,
     getRoom,
     getRoomByName,
+    getRoomsByHotelId,
     updateRoom,
     updateRoomAvailability,
     deleteRoom,
@@ -49,6 +50,10 @@ router.get("/:id", getRoomById);
 router.get("/name", [
     validarCampos
 ], getRoomByName);
+
+router.get("/search/:hotelId", [
+    validarCampos
+], getRoomsByHotelId);
 
 router.put("/:id", [
     validarCampos
