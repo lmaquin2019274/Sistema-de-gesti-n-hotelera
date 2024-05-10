@@ -98,3 +98,13 @@ export const getRoomsDetails = async (roomId) => {
         }
     }
 }
+export const getHotelRooms = async (hotelId) => {
+    try{
+        return await apiClient.get(`/room/search/${hotelId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}

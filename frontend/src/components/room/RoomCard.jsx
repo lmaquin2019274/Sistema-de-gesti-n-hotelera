@@ -21,7 +21,6 @@ export const RoomCard = ({
 }) => {
     const handleNavigate = () => {
         navigateToRoomHandler(_id)
-        console.log(_id)
     }
 
     return(

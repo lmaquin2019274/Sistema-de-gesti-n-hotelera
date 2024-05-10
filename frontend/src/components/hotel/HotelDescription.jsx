@@ -1,9 +1,21 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 import { useUserDetails } from "../../shared/hooks";
 
-const RoomsButton = ({ hotelId, getHotels, getRooms }) => {
+export const RoomsButton = ({ hotelId }) => {
+    const navigate = useNavigate();
 
-}
+    const handleClick = () => {
+        localStorage.setItem("hotelId", hotelId);
+        navigate(`/room/search/${hotelId}`);
+    };
+
+    return (
+        <button className='channel-follow-button' onClick={handleClick}>
+            Rooms
+        </button>
+    );
+};
 
 export const HotelDescription = ({
     name,
@@ -12,8 +24,6 @@ export const HotelDescription = ({
     category,
     comforts,
     capacity,
-    getHotels,
-    getRooms
 }) => {
     const { isLogged } = useUserDetails();
 
@@ -23,14 +33,7 @@ export const HotelDescription = ({
                 <span className="channel-description-title">
                     {name}
                     <span>
-                        {isLogged && (
-                            <RoomsButton
-                                className='channel-follow-button'
-                                hotelId={hotelId}
-                                getHotels={getHotels}
-                                getRooms={getRooms}
-                            />
-                        )}
+                        <RoomsButton hotelId={hotelId} />
                     </span>
                 </span>
             </div>
@@ -53,5 +56,5 @@ export const HotelDescription = ({
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

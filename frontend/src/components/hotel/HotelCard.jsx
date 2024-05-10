@@ -20,7 +20,6 @@ export const HotelCard = ({
 }) => {
     const handleNavigate = () => {
         navigateToHotelHandler(_id)
-        console.log(_id)
     }
 
     return(

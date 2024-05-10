@@ -7,7 +7,6 @@ export const Hotels = ({hotels}) => {
 
     const handleNavigateToHotel = (id) => {
         navigate(`/hotel/${id}`)
-        console.log(id)
     }
 
 

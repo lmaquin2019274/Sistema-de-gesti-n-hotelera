@@ -32,7 +32,7 @@ export const HotelView = ({ getHotels }) => {
                 <ImgHotel imgUrl={hotelDetails.data.imgUrl} />
                 <div className="channel-description-box2">
                     <HotelDescription
-                        hotelId={hotelDetails.data.id}
+                        hotelId={hotelDetails.data._id}
                         name={hotelDetails.data.name}
                         location={hotelDetails.data.location}
                         category={hotelDetails.data.category}
