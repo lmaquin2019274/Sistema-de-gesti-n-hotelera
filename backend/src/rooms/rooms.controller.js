@@ -105,6 +105,7 @@ export const getRoomsByHotelId = async (req, res) => {
         const rooms = await Room.find({ hotel: hotel._id });
         const roomsWithHotelName = rooms.map(room => ({
             hotel: hotel.name,
+            _id: room._id,
             name: room.name,
             available: room.available,
             price: room.price,
@@ -119,8 +120,6 @@ export const getRoomsByHotelId = async (req, res) => {
         return res.status(500).send('Something went wrong');
     }
 };
-
-
 
 
 // Editar Habitación
