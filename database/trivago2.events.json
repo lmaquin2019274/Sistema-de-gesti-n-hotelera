@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "66457b82f97561ef2b7becba"
+  },
+  "name": "Matrimonio di lusso",
+  "description": "Celebra il tuo giorno speciale al prestigioso Pitti Palace al Ponte Vecchio, un luogo storico e affascinante nel cuore di Firenze. Offriamo un servizio completo per matrimoni intimi, con un banchetto esclusivo per 30 invitati. Goditi una giornata indimenticabile in un'atmosfera elegante e romantica, con una cucina raffinata e un servizio impeccabile che renderanno il tuo matrimonio un evento davvero unico.",
+  "hotel": "Al Ponte Vecchio",
+  "date": null,
+  "capacity": 30,
+  "imgUrl": "https://cardswith.love/img/ybc_blog/post/bride-lavish-wedding-gown-walking-hand-hand-with-her-groom-dressed-sophisticated-sui--1-.jpg",
+  "price": 500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664642f29b3ad0ebf7f5c44d"
+  },
+  "name": "Business Conference",
+  "description": "Host your next business conference at our luxury hotel in the city center. We offer modern spaces equipped with cutting-edge technology to guarantee the success of your event. Our experienced team is ready to help you every step of the way.",
+  "hotel": "45 Times Square Hotel",
+  "capacity": 20,
+  "imgUrl": "https://www.hoteleventi.com/images/1700-960/evt-mr-065-7a4bb5c2.jpg",
+  "price": 400,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664643bd9b3ad0ebf7f5c454"
+  },
+  "name": "Business Conference",
+  "description": "Host your next business conference at our luxury hotel. We offer modern spaces equipped with cutting-edge technology to guarantee the success of your event. Our experienced team is ready to help you every step of the way.",
+  "hotel": "Leonard Royal",
+  "capacity": 1000,
+  "imgUrl": "https://billetto.imgix.net/remote_images/19785/original/9d0e19f2-b333-45b6-8e4a-d2e7eabebb42.JPG?s=5cde14c5151d16901fe2a8a41dd186e2",
+  "price": 1000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664644579b3ad0ebf7f5c45b"
+  },
+  "name": "Conferenza d'affari",
+  "description": "Ospita la tua prossima conferenza d'affari nel nostro hotel di lusso. Offriamo spazi moderni dotati di tecnologia all'avanguardia per garantire il successo del vostro evento. Il nostro team esperto è pronto ad aiutarti in ogni fase del process.",
+  "hotel": "Al Ponte Vecchio",
+  "capacity": 30,
+  "imgUrl": "https://www.hotelbrunelleschi.it/wp-content/uploads//photogallery-hotel-firenzemeeting203_7-1024x640.jpg",
+  "price": 500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664645389b3ad0ebf7f5c462"
+  },
+  "name": "Festa de aniversário",
+  "description": "Comemore seu aniversário em grande com nossa oferta especial de festa na praia. Desfrute de uma tarde ensolarada com música, comida deliciosa e diversão sem fim. Nossa equipe terá prazer em personalizar seu evento de acordo com suas necessidades.",
+  "hotel": "Hilton Copacabana",
+  "capacity": 50,
+  "imgUrl": "https://toursgonewild.com/wp-content/uploads/2020/07/porto-bay-rio-international-hotel-19.jpg",
+  "price": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664646379b3ad0ebf7f5c469"
+  },
+  "name": "Mostra d'Arte",
+  "description": "Esplora il rinascimento italiano con la nostra mostra d'arte dedicata al periodo rinascimentale. Ammira capolavori di artisti del calibro di Leonardo da Vinci, Michelangelo e Raffaello, che rappresentano l'apice della creatività e dell'innovazione artistica. Immergiti nell'atmosfera di un'epoca d'oro dell'arte mentre scopri opere che hanno plasmato la storia culturale dell'umanità.",
+  "hotel": "Al Ponte Vecchio",
+  "capacity": 150,
+  "imgUrl": "https://cdn.sortiraparis.com/images/80/105749/1031491-le-gout-de-la-renaissance-l-exposition-de-collectionneurs-se-devoile-a-l-hotel-de-la-marine-img20240305105157.jpg",
+  "price": 2000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664647a19b3ad0ebf7f5c47a"
+  },
+  "name": "Espaço para Palestras",
+  "description": "Organize sua próxima conferência ou seminário em nosso espaço moderno e equipado. Oferecemos ambientes confortáveis e tecnologicamente avançados para garantir o sucesso do seu evento. Nossa equipe experiente está disponível para atender a todas as suas necessidades e garantir uma experiência sem precedentes.",
+  "hotel": "Hilton Copacabana",
+  "capacity": 150,
+  "imgUrl": "https://goquitohotel.com/wp-content/uploads/2024/04/Meeting-rooms.webp",
+  "price": 2500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664647ed9b3ad0ebf7f5c481"
+  },
+  "name": "Torneio de Futebol de Praia",
+  "description": "Participe do nosso emocionante torneio de futebol de praia nas areias icônicas de Copacabana. Equipes de todo o mundo competirão em partidas emocionantes enquanto desfrutam do sol quente e das águas cristalinas do Oceano Atlântico. Uma experiência esportiva inesquecível em um dos lugares mais fascinantes do mundo.",
+  "hotel": "Hilton Copacabana",
+  "capacity": 16,
+  "imgUrl": "https://deporteolimpico.net/wp-content/uploads/2023/05/7351266642_d8a35a7b13_b.jpg",
+  "price": 3000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664648689b3ad0ebf7f5c488"
+  },
+  "name": "Trade Fair",
+  "description": "Join us for an exciting trade fair event at the prestigious 45 Times Square Hotel. Connect with industry professionals, showcase your products, and explore the latest trends and innovations. Don't miss this opportunity to network and expand your business horizons.",
+  "hotel": "45 Times Square Hotel",
+  "capacity": 300,
+  "imgUrl": "https://cloudbeds-fcfc.kxcdn.com/wp-content/uploads/2022/12/Hotel-industry-tardeshows.png",
+  "price": 5000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646488c9b3ad0ebf7f5c48a"
+  },
+  "name": "Christmas Salon",
+  "description": "Experience the magic of the holiday season at our Christmas salon hosted at the elegant 45 Times Square Hotel. Immerse yourself in festive decorations, indulge in seasonal treats, and shop for unique gifts from local artisans and vendors. Join us for a joyful celebration filled with warmth and cheer.",
+  "hotel": "45 Times Square Hotel",
+  "capacity": 100,
+  "imgUrl": "https://media.timeout.com/images/103648638/image.jpg",
+  "price": 2500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646490f9b3ad0ebf7f5c491"
+  },
+  "name": "New Year's Salon",
+  "description": "Welcome the New Year in style at our glamorous New Year's salon hosted at the luxurious Leonardo Royal London Tower Bridge. Enjoy an evening of exquisite dining, live entertainment, and dancing as we count down to midnight amidst the backdrop of London's iconic skyline. Join us for a celebration to remember.",
+  "hotel": "Leonard Royal",
+  "capacity": 150,
+  "imgUrl": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/England/London/the-savoy-nye.jpg",
+  "price": 3500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646493a9b3ad0ebf7f5c493"
+  },
+  "name": "Sociopolitical Events",
+  "description": "Host your sociopolitical events at the Leonardo Royal London Tower Bridge, a prestigious venue ideal for discussions, debates, and conferences. Our state-of-the-art facilities and professional staff ensure a seamless experience for your guests, whether it's a policy forum, political rally, or social gathering.",
+  "hotel": "Leonard Royal",
+  "capacity": 200,
+  "imgUrl": "https://media-cdn.tripadvisor.com/media/photo-s/2a/99/93/5a/victoria-lobby-7.jpg",
+  "price": 5000,
+  "__v": 0
+}]

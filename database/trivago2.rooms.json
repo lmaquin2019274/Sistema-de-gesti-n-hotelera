@@ -1,5 +1,20 @@
 [{
   "_id": {
+    "$oid": "663295e2877299d884e81e2d"
+  },
+  "hotel": {
+    "$oid": "663256de2152cb73cca5477f"
+  },
+  "name": "Basic suit",
+  "available": true,
+  "price": 500,
+  "capacity": 1,
+  "imgUrl": "https://www.hilton.com/im/en/RIOCCHH/19025019/riocc-of-acomoda-es-suite-king-ocean-view-nov22-alta-credtomasrangel.jpg?impolicy=crop&cw=5000&ch=2992&gravity=NorthWest&xposition=0&yposition=424&rw=528&rh=316",
+  "reservations": [],
+  "__v": 0
+},
+{
+  "_id": {
     "$oid": "6633c40e29ccab9452d1356f"
   },
   "hotel": {
