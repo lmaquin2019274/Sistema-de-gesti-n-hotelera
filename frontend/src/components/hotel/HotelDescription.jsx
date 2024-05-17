@@ -17,6 +17,21 @@ export const RoomsButton = ({ hotelId }) => {
     );
 };
 
+export const EventsButton = ({ hotelId }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        localStorage.setItem("hotelId", hotelId);
+        navigate(`/event/search/${hotelId}`);
+    };
+
+    return (
+        <button className='channel-follow-button' onClick={handleClick}>
+            Events
+        </button>
+    );
+};
+
 export const HotelDescription = ({
     name,
     hotelId,
@@ -32,8 +47,9 @@ export const HotelDescription = ({
             <div className="channel-description-title-box">
                 <span className="channel-description-title">
                     {name}
-                    <span>
+                    <span className="hotel-btn">
                         <RoomsButton hotelId={hotelId} />
+                        <EventsButton hotelId={hotelId} />
                     </span>
                 </span>
             </div>

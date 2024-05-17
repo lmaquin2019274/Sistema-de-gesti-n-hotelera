@@ -2,7 +2,7 @@
 
 const imageUrl = 'https://www.msi-viking.com/sca-dev-2023-1-0/img/no_image_available.jpeg'
 
-const RoomAvatar = ({url}) => {
+const EventAvatar = ({url}) => {
     return(
         <div className="channels-img-container">
             <img src={url ? url : imageUrl} width='100%' height='100%' alt="Default img" />
@@ -10,29 +10,24 @@ const RoomAvatar = ({url}) => {
     )
 }
 
-export const RoomCard = ({
+export const EventCard = ({
     name,
     _id,
     price,
     imgUrl,
     hotel,
-    available,
-    navigateToRoomHandler
+    navigateToEventHandler
 }) => {
     const handleNavigate = () => {
-        navigateToRoomHandler(_id)
-        console.log('roomcard: ',_id)
+        navigateToEventHandler(_id)
     }
 
     return(
         <div className="channels-card" onClick={handleNavigate}>
-            <RoomAvatar url={imgUrl}/>
+            <EventAvatar url={imgUrl}/>
             <span className="channels-card-title">{name}</span>
             <span className="channels-card-text"> $ {price}</span>
             <span className="channels-card-text">{typeof hotel === 'object' ? hotel.name : hotel}</span>
-            <span className="channels-card-title" style={{color: available ? 'green' : 'red'}}>
-                {available ? 'Avaiable' : 'Not avaiable'}
-            </span>
         </div>
     )
 }

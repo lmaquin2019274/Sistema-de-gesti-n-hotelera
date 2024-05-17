@@ -1,30 +1,28 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
-import { RoomCard } from "./RoomCard";
+import { EventCard } from "./EventCard";
 
-export const Rooms = ({rooms}) => {
+export const Events = ({events}) => {
     const navigate  = useNavigate()
 
-    const handleNavigateToRoom = (id) => {
-        navigate(`/room/${id}`)
+    const handleNavigateToEvent = (id) => {
+        navigate(`/event/${id}`)
     }
-
-    const roomsArray = rooms && rooms.rooms ? rooms.rooms : [];
 
     return (
         <div className="channels-container">
-          <span className="title-supreme">Rooms</span>
-          {roomsArray.map((c) => (
-            <RoomCard
+          <span className="title-supreme">Events</span>
+          {events && events.map((c) => (
+            <EventCard
               key={c.id}
               _id={c._id}
               name={c.name}
-              available={c.available}
+              description={c.description}
               price={c.price}
               hotel={c.hotel}
               capacity={c.capacity}
               imgUrl={c.imgUrl}
-              navigateToRoomHandler={handleNavigateToRoom}
+              navigateToEventHandler={handleNavigateToEvent}
             />
           ))}
         </div>

@@ -108,3 +108,33 @@ export const getHotelRooms = async (hotelId) => {
         }
     }
 }
+export const getHotelEvents = async (hotelId) => {
+    try{
+        return await apiClient.get(`/event/search/${hotelId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getEvents = async () => {
+    try{
+        return await apiClient.get('/event')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getEventDetails = async (eventId) => {
+    try{
+        return await apiClient.get(`/event/${eventId}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
