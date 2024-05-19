@@ -66,6 +66,14 @@
     margin-bottom: 25px;
 }
  
+.mini-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
 
 .content-container {
     position: absolute;
@@ -273,19 +281,32 @@ footer p {
     font-style: italic;
 }
 
+.settings-supreme {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .settings-container {
     font-size: 24px;
-    margin-left: 10px;
-    margin-top: 20px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    width: 100%;
 }
- 
+
 .settings-form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     margin-bottom: 10px;
-    box-shadow: 0 0 5px 0 lightgrey;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
     width: 400px;
+    max-height: 180px;
     padding: 10px;
     font-size: 16px;
 }
@@ -301,24 +322,68 @@ footer p {
     cursor: pointer;
     transition: 0.3s;
 }
- 
+
 .settings-form button:hover {
     opacity: 0.7;
 }
- 
+
 .settings-form button:disabled {
     opacity: 0.3;
 }
- 
- 
-.settings-stream-key-container {
+
+.new-post-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    margin-right: 20px;
-    box-shadow: 0 0 5px 0 lightgrey;
-    background-color: #2f2f30;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+.new-post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.post-input-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post-input {
+    width: 95%;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-input-box i {
+    margin-left: -30px;
+    margin-right: 10px;
+    color: #666;
+}
+
+.custom-select-class {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
+}
+
+.custom-select-class:focus {
+    outline: none;
+    border-color: #0b336b;
 }
  
 .channel-container {
@@ -469,4 +534,74 @@ footer p {
 .leaflet-popup-content {
     font-size: 14px;
     padding: 10px;
+}
+.new-hotel-container {
+    min-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: -80px;
+  }
+  
+  .new-hotel-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .new-hotel-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hotel-input-box {
+    margin-bottom: 20px;
+  }
+  
+  .hotel-input,
+  .hotel-text {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .hotel-input:focus,
+  .hotel-text:focus {
+    outline: none;
+    border-color: #000000;
+  }
+  
+  .new-hotel-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-hotel-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .to-hotel-card {
+    margin-left: 10px;
+    margin-top: -50px;
+    margin-bottom: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.to-hotel-card:hover {
+    transform: scale(1.05);
 }

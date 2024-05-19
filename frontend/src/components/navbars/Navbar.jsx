@@ -69,7 +69,7 @@ export const Navbar = () => {
                 {!isLogged ? (
                     <NavButton text='   Log in' icon={'fa-solid fa-right-to-bracket'} onClickHandler={handleNavigateToAuthPage}/>
                 ) : (
-                    <div>
+                    <div className="mini-buttons-container">
                         <NavButton text='   Settings' icon={'fa-solid fa-gear'} onClickHandler={handleNavigateToSettingPage}/>
                         <NavButton text='   Log out' icon={'fa-solid fa-right-from-bracket'} onClickHandler={handleLogout}/>
                     </div>

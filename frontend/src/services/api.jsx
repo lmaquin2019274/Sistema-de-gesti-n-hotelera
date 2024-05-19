@@ -38,9 +38,14 @@ export const getHotelsDetails = async (hotelId) => {
         }
     }
 }
-export const putUserSettings = async () => {
+export const updateUser = async (data, token) => {
     try{
-        return await apiClient.get('/hotel')
+        const response = await apiClient.put('/settings/update', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+        return response;
     }catch(e){
         return{
             error: true,
@@ -48,9 +53,9 @@ export const putUserSettings = async () => {
         }
     }
 }
-export const getUserSetting = async () => {
+export const putUserSettings = async (data) => {
     try{
-        return await apiClient.get('/hotel')
+        return await apiClient.put('/settings/user', data)
     }catch(e){
         return{
             error: true,
@@ -58,9 +63,19 @@ export const getUserSetting = async () => {
         }
     }
 }
-export const patchChangePassword = async () => {
+export const getUserSetting = async (data) => {
     try{
-        return await apiClient.get('/hotel')
+        return await apiClient.post('/settings/user', data)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const patchChangePassword = async (data) => {
+    try{
+        return await apiClient.patch('/settings/user', data)
     }catch(e){
         return{
             error: true,
@@ -71,6 +86,57 @@ export const patchChangePassword = async () => {
 export const getHotels = async () => {
     try{
         return await apiClient.get('/hotel')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const createHotel = async (data) => {
+    try{
+        return await apiClient.post('/hotel', data)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getBadHotels = async () => {
+    try{
+        return await apiClient.get('/hotel/bad')
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const deleteHotel = async (data) => {
+    console.log(data)
+    try{
+        const response = await apiClient.delete('/hotel/delete', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+        return response;
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const restoreHotel = async (data, token) => {
+    try{
+        const response = await apiClient.post('/hotel/restore', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+        return response;
     }catch(e){
         return{
             error: true,

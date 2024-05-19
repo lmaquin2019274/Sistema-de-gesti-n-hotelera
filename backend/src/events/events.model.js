@@ -24,6 +24,10 @@ const eventSchema = mongoose.Schema({
         required: true,
         min: 0.01
     },
+    estado:{
+        type: Boolean,
+        default: true
+    }
 })
 
 export default mongoose.model('Event', eventSchema)

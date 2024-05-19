@@ -2,59 +2,81 @@ import User from '../users/user.model.js'
 import bcryptjs from 'bcryptjs'
 
 export const getUserSetting = async (req, res) => {
-    try {
-        const { uid } = req.user
+    try{
+        const { userId } = req.body
 
-        const userData = await User.findById(uid)
+        console.log(userId)
 
-        if (!userData) {
-            return res.status(404).json({ error: 'User not found' })
-        }
+        const userData = await User.findById(userId)
 
         return res.status(200).json({
-            id: userData.uid,
+            id: userData.id,
             username: userData.username,
-            email: userData.email
+            email: userData.email,
+            role: userData.role,
+            hotel: userData.hotel
         })
-    } catch (e) {
-        console.error(e)
+    }catch(e){
         return res.status(500).send('Something went wrong')
     }
 }
 
-export const putUserSettings = async(req, res) => {
-    try{
-        const { uid } = req.user;
-        const { username, email } = req.body
-        
-        const userData = await User.findByIdAndUpdate(uid,{
-            username,
-            email,
-        }, {new:true})
+export const usuariosUpdate = async (req, res) => {
+    const { email, role, hotel } = req.body;
 
-        if (!userData) {
-            return res.status(404).json({ error: 'User not found' })
-        }
-
-        console.log(userData)
-
-        return res.status(200).json({
-            userId: userData.uid,
-            username: userData.username,
-            email: userData.email
-        })
-
-    }catch(e){
-        return res.status(500).send('Somthing went wrong')
+    console.log(hotel);
+  
+    try {
+      // Verifica si el campo hotel está vacío
+      const hotelToUpdate = hotel === "" ? null : hotel;
+  
+      const usuarioActualizado = await User.findOneAndUpdate(
+        { email: email },
+        { role: role, hotel: hotelToUpdate },
+        { new: true }
+      );
+  
+      if (!usuarioActualizado) {
+        return res.status(404).json({
+          msg: 'No se encontró un usuario con ese email',
+        });
+      }
+  
+      res.status(200).json({
+        msg: 'Tu usuario ha sido actualizado',
+        usuario_nuevo: usuarioActualizado
+      });
+  
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({
+        msg: 'Ocurrió un error al actualizar el usuario',
+        error: error.message
+      });
     }
 }
 
-export const patchChangePassword = async (req, res) => {
-    try{
-        const { uid } = req.user
-        const { password, newPassword} = req.body
+  
 
-        const userData = await User.findById(uid, {password: 1})
+export const usuariosPut = async (req, res) => {
+    const { userId, username, email } = req.body;
+  
+    const actualizaciones = { username: username, email: email };
+    const usuarioActualizado = await User.findByIdAndUpdate(userId, actualizaciones, { new: true });
+  
+    console.log(usuarioActualizado)
+  
+    res.status(200).json({
+        msg: 'Tu usuario ha sido actualizado',
+        usuario_nuevo: usuarioActualizado.usuario
+    });
+  }
+
+export const passwordPatch = async (req, res) => {
+    try{
+        const { userId, password, newPassword} = req.body
+
+        const userData = await User.findById(userId, {password: 1})
 
         const isPasswordCorrect = await bcryptjs.compare(password, userData.password)
 
@@ -64,7 +86,7 @@ export const patchChangePassword = async (req, res) => {
 
         const encryptedPassword = await bcryptjs.hash(newPassword, 10)
 
-        await User.updateOne({_id: uid},{password: encryptedPassword})
+        await User.updateOne({_id: userId},{password: encryptedPassword})
 
         return res.status(200).send('Password changed succesfully')
     }catch(e){

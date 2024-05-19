@@ -11,6 +11,7 @@ import {
     getRoomById
 } from "./rooms.controller.js"
 import { validarCampos } from "../middlewares/validar-campos.js";
+import { validarHotelId } from "../middlewares/validar-id.js"
 //import { tieneRole } from "../middlewares/validar-roles.js"
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -52,7 +53,7 @@ router.get("/name", [
 ], getRoomByName);
 
 router.get("/search/:hotelId", [
-    validarCampos
+    validarCampos,
 ], getRoomsByHotelId);
 
 router.put("/:id", [

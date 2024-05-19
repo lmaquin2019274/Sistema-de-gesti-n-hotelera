@@ -4,10 +4,11 @@ import { getUserSetting, putUserSettings } from "../../services"
 
 export const useUserSettings = () => {
     const [userSettings, setUserSettings] = useState()
+    const userId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).id : null;
+
 
     const fetchUserSettings = async () => {
-        const response = await getUserSetting()
-
+        const response = await getUserSetting({userId})
         if(response.error){
             return toast.error(
                 response.e?.response?.data ||
@@ -16,7 +17,8 @@ export const useUserSettings = () => {
         }
         setUserSettings({
             username: response.data.username,
-            email: response.data.email
+            email: response.data.email,
+            role: response.data.role,
         })
     }
 

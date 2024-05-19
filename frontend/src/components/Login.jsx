@@ -10,15 +10,15 @@ import {
 import { useLogin } from "../shared/hooks"
 
 export const Login = ({ switchAuthHandler }) => {
-    const {login, isLoading} = useLogin();
+    const { login, isLoading } = useLogin();
 
     const [formState, setFormState] = useState({
-        email:{
+        email: {
             value: '',
             isValid: false,
             showError: false
         },
-        password:{
+        password: {
             value: '',
             isValid: false,
             showError: false
@@ -28,7 +28,7 @@ export const Login = ({ switchAuthHandler }) => {
     const handleInputValueChange = (value, field) => {
         setFormState((prevState) => ({
             ...prevState,
-            [field]:{
+            [field]: {
                 ...prevState[field],
                 value
             }
@@ -37,22 +37,22 @@ export const Login = ({ switchAuthHandler }) => {
 
     const handleInputValidationOnBlur = (value, field) => {
         let isValid = false
-        switch(field){
+        switch (field) {
             case 'email':
                 isValid = validationEmail(value)
-            break
+                break
 
             case 'password':
                 isValid = validatePassword(value)
-            break
+                break
 
             default:
-            break
+                break
         }
 
         setFormState((prevState) => ({
             ...prevState,
-            [field]:{
+            [field]: {
                 ...prevState[field],
                 isValid,
                 showError: !isValid
@@ -70,35 +70,43 @@ export const Login = ({ switchAuthHandler }) => {
 
     return (
         <div className="login-container">
-            <Logo text={'Log in'}/>
             <form className="auth-form">
-                <Input
-                    field='email'
-                    label='Email'
-                    value={formState.email.value}
-                    onChangeHandler={handleInputValueChange}
-                    type='text'
-                    onBlurHandler={handleInputValidationOnBlur}
-                    showErrorMessage={formState.email.showError}
-                    validationMessage={emailValidationMessage}
-                />
-                <Input
-                    field='password'
-                    label='Password'
-                    value={formState.password.value}
-                    onChangeHandler={handleInputValueChange}
-                    type='password'
-                    onBlurHandler={handleInputValidationOnBlur}
-                    showErrorMessage={formState.password.showError}
-                    validationMessage={validatePasswordMessage}
-                />
-                <button onClick={handleLogin} disabled={isSubmitButtonDisable}>
+                <Logo text={'Log in'} />
+                <div className="input-box">
+                    <Input
+                        field='email'
+                        placeholder='Email'
+                        className='login-input'
+                        value={formState.email.value}
+                        onChangeHandler={handleInputValueChange}
+                        type='text'
+                        onBlurHandler={handleInputValidationOnBlur}
+                        showErrorMessage={formState.email.showError}
+                        validationMessage={emailValidationMessage}
+                    />
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div className="input-box">
+                    <Input
+                        field='password'
+                        placeholder='Password'
+                        className='login-input'
+                        value={formState.password.value}
+                        onChangeHandler={handleInputValueChange}
+                        type='password'
+                        onBlurHandler={handleInputValidationOnBlur}
+                        showErrorMessage={formState.password.showError}
+                        validationMessage={validatePasswordMessage}
+                    />
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button onClick={handleLogin} disabled={isSubmitButtonDisable} className="login__button">
                     Log in
                 </button>
+                <div onClick={switchAuthHandler} className="auth-form-switch-label">
+                    Don't have an acount? register now!
+                </div>
             </form>
-            <span onClick={switchAuthHandler} className="auth-form-switch-label">
-                You haven't an acount? register now!
-            </span>
         </div>
     )
 }

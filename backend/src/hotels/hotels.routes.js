@@ -4,7 +4,7 @@ import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
-import { createHotel, getAllHotels, getHotelById, updateHotelById, deleteHotelById } from "./hotels.controller.js";
+import { createHotel, getAllHotels, getHotelById, updateHotelById, deleteHotelById, getBadHotels, restoreHotelById } from "./hotels.controller.js";
 
 const router = Router();
 
@@ -27,6 +27,8 @@ router.post(
 // Obtener todos los hoteles
 router.get("/", getAllHotels);
 
+router.get("/bad", getBadHotels);
+
 // Obtener un hotel por ID
 router.get("/:id", getHotelById);
 
@@ -46,4 +48,8 @@ router.put(
 );
 
 // Eliminar un hotel por ID
-router.delete("/:id", deleteHotelById);
+router.delete("/delete",[
+], deleteHotelById);
+
+router.post("/restore",[
+], restoreHotelById);

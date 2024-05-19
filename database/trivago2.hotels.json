@@ -9,7 +9,8 @@
   "capacity": "1-4 people",
   "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/531848790.jpg?k=3cc1d2474cce6192dd0b396c8314603a65ff4ef7c8db2891bd1806e17e999e5a&o=&hp=1",
   "coordenadas": "-22.96423284379043, -43.17325377521141",
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -22,7 +23,8 @@
   "capacity": "1-6 people",
   "imgUrl": "https://room-mate-grace-new-york.hotelmix.es/data/Photos/OriginalPhoto/14348/1434837/1434837772/45-Times-Square-Hotel-New-York-Exterior.JPEG",
   "coordenadas": "40.75771546756702, -73.9838331746106",
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -35,7 +37,8 @@
   "capacity": "1-2 people",
   "imgUrl": "https://ik.imgkit.net/3vlqs5axxjf/external/https://www.cfmedia.vfmleonardo.com/imageRepo/7/0/126/24/170/Leonardo_Royal_London_City_Exterior_Dusk_O.jpg?tr=w-1200%2Cfo-auto",
   "coordenadas": "51.51186483587157, -0.07151287401822566",
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -48,5 +51,6 @@
   "capacity": "1-4 people",
   "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/340220011.jpg?k=c6bf28529b9550b1a774ed740f277df192495fbf006b560fab9fc50e32238534&o=&hp=1",
   "coordenadas": "43.76761609313986, 11.252546296804972",
-  "__v": 0
+  "__v": 0,
+  "estado": true
 }]

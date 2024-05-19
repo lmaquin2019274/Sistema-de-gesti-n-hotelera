@@ -21,6 +21,10 @@ const hotelSchema = mongoose.Schema({
     },
     coordenadas:{
         type: String,
+    },
+    estado:{
+        type: Boolean,
+        default: true
     }
 })
 

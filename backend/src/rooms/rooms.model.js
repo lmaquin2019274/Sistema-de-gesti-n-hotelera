@@ -33,7 +33,11 @@ const roomSchema = mongoose.Schema({
         endDate: {
             type: Date
         }
-    }]
+    }],
+    estado:{
+        type: Boolean,
+        default: true
+    }
 })
 
 export default mongoose.model('Room', roomSchema)

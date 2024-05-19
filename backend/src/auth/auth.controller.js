@@ -43,7 +43,8 @@ export const login = async (req, res) => {
         msg: "Login Ok!!!",
         userDetails: {
           email: user.email,
-          token: token
+          id: user.id,
+          token: token,
         },
       });
     }

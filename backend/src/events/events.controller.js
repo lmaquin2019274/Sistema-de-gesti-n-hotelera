@@ -1,10 +1,11 @@
 import { response, request } from "express";
 import Event from "./events.model.js";
 import Hotel from '../hotels/hotels.model.js';
+import mongoose from 'mongoose';
 
 export const listEvents = async (req, res) => {
     try {
-        const events = await Event.find();
+        const events = await Event.find({ estado: true });
         res.status(200).json(events);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -76,7 +77,11 @@ export const deleteEvent = async (req, res) => {
     try {
         const eventId = req.params.id;
 
-        const deletedEvent = await Event.findByIdAndDelete(eventId);
+        const deletedEvent = await Event.findByIdAndUpdate(
+            id,
+            { estado: false },
+            { new: true }
+        );
 
         if (!deletedEvent) {
             return res.status(404).json({ error: "Event not found" });
@@ -90,6 +95,10 @@ export const deleteEvent = async (req, res) => {
 
 export const findEventsByHotel = async (req, res) => {
     const { hotelId } = req.params;
+
+    if (!mongoose.isValidObjectId(hotelId)) {
+        return;
+    }
 
     try {
         const hotel = await Hotel.findById(hotelId);

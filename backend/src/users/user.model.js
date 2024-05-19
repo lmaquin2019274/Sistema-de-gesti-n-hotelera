@@ -16,6 +16,10 @@ const UserSchema = mongoose.Schema({
         required: true,
         enum: ["CLIENT_ROLE", "ADMIN_ROLE", "MANAGER_ROLE"],
         default: "CLIENT_ROLE"
+    },
+    hotel: {
+        type: Schema.Types.ObjectId,
+        ref: 'Hotel',
     }
 })
 

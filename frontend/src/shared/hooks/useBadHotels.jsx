@@ -1,15 +1,15 @@
 /* eslint-disable no-extra-boolean-cast */
 import { useState } from "react"
 import toast from "react-hot-toast"
-import {  getHotels as getHotelsRequest} from "../../services"
+import {  getBadHotels as getBadHotelsRequest} from "../../services"
 
 
-export const useHotels = () => {
+export const useBadHotels = () => {
     const [ hotels, setHotels ] = useState([]);
 
-    const getHotels = async (isLogged = false) => {
+    const getBadHotels = async (isLogged = false) => {
         try {
-            const hotelsData = await getHotelsRequest();
+            const hotelsData = await getBadHotelsRequest();
             if (hotelsData.error) {
                 return toast.error(
                     hotelsData.e?.response?.data || 'Error ocurred when reading hotels'
@@ -17,13 +17,16 @@ export const useHotels = () => {
             }
 
             setHotels(hotelsData.data)
+
+            console.log(hotelsData.data);
+            console.log('hotels: ',hotels);
         } catch (error) {
             console.error('Error fetching hotels:', error);
         }
     };
 
     return {
-        getHotels,
+        getBadHotels,
         isFetching: !Boolean(hotels),
         allHotels: hotels
     };

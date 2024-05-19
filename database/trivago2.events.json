@@ -9,7 +9,8 @@
   "capacity": 30,
   "imgUrl": "https://cardswith.love/img/ybc_blog/post/bride-lavish-wedding-gown-walking-hand-hand-with-her-groom-dressed-sophisticated-sui--1-.jpg",
   "price": 500,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -21,7 +22,8 @@
   "capacity": 20,
   "imgUrl": "https://www.hoteleventi.com/images/1700-960/evt-mr-065-7a4bb5c2.jpg",
   "price": 400,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -33,7 +35,8 @@
   "capacity": 1000,
   "imgUrl": "https://billetto.imgix.net/remote_images/19785/original/9d0e19f2-b333-45b6-8e4a-d2e7eabebb42.JPG?s=5cde14c5151d16901fe2a8a41dd186e2",
   "price": 1000,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -45,7 +48,8 @@
   "capacity": 30,
   "imgUrl": "https://www.hotelbrunelleschi.it/wp-content/uploads//photogallery-hotel-firenzemeeting203_7-1024x640.jpg",
   "price": 500,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -57,7 +61,8 @@
   "capacity": 50,
   "imgUrl": "https://toursgonewild.com/wp-content/uploads/2020/07/porto-bay-rio-international-hotel-19.jpg",
   "price": 750,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -69,7 +74,8 @@
   "capacity": 150,
   "imgUrl": "https://cdn.sortiraparis.com/images/80/105749/1031491-le-gout-de-la-renaissance-l-exposition-de-collectionneurs-se-devoile-a-l-hotel-de-la-marine-img20240305105157.jpg",
   "price": 2000,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -81,7 +87,8 @@
   "capacity": 150,
   "imgUrl": "https://goquitohotel.com/wp-content/uploads/2024/04/Meeting-rooms.webp",
   "price": 2500,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -93,7 +100,8 @@
   "capacity": 16,
   "imgUrl": "https://deporteolimpico.net/wp-content/uploads/2023/05/7351266642_d8a35a7b13_b.jpg",
   "price": 3000,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -105,7 +113,8 @@
   "capacity": 300,
   "imgUrl": "https://cloudbeds-fcfc.kxcdn.com/wp-content/uploads/2022/12/Hotel-industry-tardeshows.png",
   "price": 5000,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -117,7 +126,8 @@
   "capacity": 100,
   "imgUrl": "https://media.timeout.com/images/103648638/image.jpg",
   "price": 2500,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -129,7 +139,8 @@
   "capacity": 150,
   "imgUrl": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/England/London/the-savoy-nye.jpg",
   "price": 3500,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -141,5 +152,6 @@
   "capacity": 200,
   "imgUrl": "https://media-cdn.tripadvisor.com/media/photo-s/2a/99/93/5a/victoria-lobby-7.jpg",
   "price": 5000,
-  "__v": 0
+  "__v": 0,
+  "estado": true
 }]

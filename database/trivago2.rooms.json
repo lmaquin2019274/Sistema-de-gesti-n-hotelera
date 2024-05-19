@@ -11,7 +11,8 @@
   "capacity": 1,
   "imgUrl": "https://www.hilton.com/im/en/RIOCCHH/19025019/riocc-of-acomoda-es-suite-king-ocean-view-nov22-alta-credtomasrangel.jpg?impolicy=crop&cw=5000&ch=2992&gravity=NorthWest&xposition=0&yposition=424&rw=528&rh=316",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -26,7 +27,8 @@
   "capacity": 2,
   "imgUrl": "https://images.getaroom-cdn.com/image/upload/s--qZ-xpT6d--/c_limit,e_improve,fl_lossy.immutable_cache,h_940,q_auto:good,w_940/v1627029078/c194ac96d0f4abb92519b867402ecc3561ec945a?atc=e7cd1cfa",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -41,7 +43,8 @@
   "capacity": 1,
   "imgUrl": "https://images.getaroom-cdn.com/image/upload/s--Xx0pjgO_--/c_limit,e_improve,fl_lossy.immutable_cache,h_940,q_auto:good,w_940/v1692276151/98a9daf65cde5cbcd7c358ef7bee9f2f2714a2f7?atc=e7cd1cfa",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -56,7 +59,8 @@
   "capacity": 2,
   "imgUrl": "https://images.getaroom-cdn.com/image/upload/s--WJX_4Uhi--/c_limit,e_improve,fl_lossy.immutable_cache,h_940,q_auto:good,w_940/v1692276157/7ad6977a91bf9327c851c2fb14782de7ae2f4623?atc=e7cd1cfa",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -71,7 +75,8 @@
   "capacity": 4,
   "imgUrl": "https://images.getaroom-cdn.com/image/upload/s--cTCn0C7F--/c_limit,e_improve,fl_lossy.immutable_cache,h_940,q_auto:good,w_940/v1692276160/8c117480d87954547566223c462cee85f38e3627?atc=e7cd1cfa",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -86,7 +91,8 @@
   "capacity": 1,
   "imgUrl": "https://www.45timessquarehotel.com/uploads/galeriahoteles/Room_Mate_Garce_Hotel_New_York_Basic_Room_2_3_1.jpg",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -101,7 +107,8 @@
   "capacity": 2,
   "imgUrl": "https://images.trvl-media.com/lodging/2000000/1160000/1156000/1155990/456408d7.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -116,7 +123,8 @@
   "capacity": 2,
   "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440950274.jpg?k=a208c66cdd0e1c93907a1859ba4927d9825059db47591dfa02ffb9111210b37f&o=&hp=1",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -131,7 +139,8 @@
   "capacity": 3,
   "imgUrl": "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://www.cfmedia.vfmleonardo.com/imageRepo/7/0/158/137/213/61425854_O/45-Times-Square-Hotel-Room.jpg?tr=w-780%2Ch-437%2Cfo-auto",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -146,7 +155,8 @@
   "capacity": 3,
   "imgUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/76/c3/7f/room-mate-grace-boutique.jpg?w=1200&h=-1&s=1",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -161,7 +171,8 @@
   "capacity": 2,
   "imgUrl": "https://static.leonardo-hotels.com/image/executive-room-with-king-bed_35ba711c8e3052877659372a86e4bb3a_2048x1365_desktop_2.jpeg",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -176,7 +187,8 @@
   "capacity": 2,
   "imgUrl": "https://www.kayak.co.uk/rimg/himg/85/6a/0f/ice-142149230-7553386_3XL-617764.jpg?width=1366&height=768&crop=true",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -191,7 +203,8 @@
   "capacity": 2,
   "imgUrl": "https://static.leonardo-hotels.com/image/leonardo-royal-london-tower-bridge-king_5294a6aac01b1def22279b8f47549c8b_2048x1251_desktop_2.jpeg",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -206,7 +219,8 @@
   "capacity": 3,
   "imgUrl": "https://content.r9cdn.net/rimg/himg/c9/43/32/leonardo-183953196-Leonardo_Royal_London_Tower_Bridge_Suite_1_O-200803.jpg?width=500&height=350&xhint=1380&yhint=911&crop=true",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -221,7 +235,8 @@
   "capacity": 2,
   "imgUrl": "https://images.trvl-media.com/lodging/1000000/20000/17400/17378/7e78d5ba.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -236,7 +251,8 @@
   "capacity": 2,
   "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/340217001.jpg?k=2b045d017a2cab6683e66ca7e0d18bf3878953963bda8f4aab665fe7bbf9a1d2&o=&hp=1",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -251,7 +267,8 @@
   "capacity": 4,
   "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/340219001.jpg?k=8e7692b188511d4e829b5e5331a30e934a230cded81c8d271caf8e5fd4c080d5&o=&hp=1",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 },
 {
   "_id": {
@@ -266,5 +283,6 @@
   "capacity": 5,
   "imgUrl": "https://pitti-palace-al-ponte-vecchio-florence.hotelmix.co.uk/data/Photos/OriginalPhoto/12745/1274553/1274553844/B-B-Hotel-Firenze-Pitti-Palace-Al-Ponte-Vecchio-Exterior.JPEG",
   "reservations": [],
-  "__v": 0
+  "__v": 0,
+  "estado": true
 }]

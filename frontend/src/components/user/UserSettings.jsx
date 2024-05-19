@@ -7,6 +7,8 @@ import {
 } from "../../shared/validators";
 import { Input } from "../Input.jsx";
 
+const userId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).id : null;
+
 const inputs = [
   {
     field: "username",
@@ -73,9 +75,9 @@ export const UserSettings = ({ settings, saveSettings }) => {
     saveSettings({
         username: formState.username.value,
         email: formState.email.value,
+        userId: userId
     })
 
-    console.log(formState)
   }
 
   const isSubmitButtonDisabled = !formState.username.isValid ||

@@ -1,7 +1,7 @@
 {
-  "name": "twitch.tv",
+  "name": "soul.bistro",
   "version": "1.0.0",
-  "description": "Proyecto de desarrollo clon de Twitch",
+  "description": "Esta aplicación deberá ofrecer funcionalidades completas para la gestión de hotel es, habitaciones y eventos asociados.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,11 +9,11 @@
     "dev": "nodemon index.js"
   },
   "keywords": [
-    "Twitch",
+    "Hotels",
     "backend",
     "nodeJs"
   ],
-  "author": "Braulio Echeverria",
+  "author": "Equipo 2",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.8",

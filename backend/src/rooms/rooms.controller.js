@@ -1,6 +1,7 @@
 import { response, request } from "express";
 import Room from './rooms.model.js';
 import Hotel from '../hotels/hotels.model.js';
+import mongoose from "mongoose";
 
 // Crear Habitación
 export const createRoom = async (req, res) => {
@@ -28,7 +29,7 @@ export const createRoom = async (req, res) => {
 // Buscar habitaciones
 export const getRoom = async (req = request, res = response) => {
     const { limite, desde } = req.query;
-    const query = { available: true };
+    const query = { estado: true };
 
     try {
         const [total, rooms] = await Promise.all([
@@ -94,6 +95,10 @@ export const getRoomByName = async (req, res = response) => {
 
 export const getRoomsByHotelId = async (req, res) => {
     const { hotelId } = req.params;
+
+    if (!mongoose.isValidObjectId(hotelId)) {
+        return;
+    }
 
     try {
         const hotel = await Hotel.findById(hotelId);
@@ -176,7 +181,11 @@ export const deleteRoom = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const room = await Room.findByIdAndDelete(id);
+        const room = await Room.findByIdAndUpdate(
+            id,
+            { estado: false },
+            { new: true }
+        );
 
         if (!room) {
             return res.status(404).json({ message: 'Room no encontrado' });
