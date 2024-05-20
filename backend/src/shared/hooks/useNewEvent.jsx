@@ -1,23 +1,27 @@
 import { useState } from "react";
-import { crateRoom as crateRoomRequest } from '../../services'
+import { crateEvent as crateEventRequest } from '../../services'
 import toast from "react-hot-toast";
 
-export const useNewRoom = () => {
+export const useNewEvent = () => {
     const [isLoading, setIsLoading] = useState(false)
+
+    const date = '';
     const userDataString = localStorage.getItem('user');
     const userData = JSON.parse(userDataString);
     const token = userData.token;
 
-    const newRoom = async (name, hotel, capacity, imgUrl, price) => {
-        const response = await crateRoomRequest({
-            hotel,
+    const newEvent = async (name, description, hotel, capacity, imgUrl, price) => {
+        const response = await crateEventRequest({
             name,
-            price,
+            description,
+            hotel,
+            date,
             capacity,
-            imgUrl
-        }, token)
+            imgUrl,
+            price
+        },token)
 
-        toast.success('room creado exitosamente');
+        toast.success('evento creado exitosamente');
 
         setIsLoading(false)
 
@@ -29,7 +33,7 @@ export const useNewRoom = () => {
         }
     }
     return {
-        newRoom,
+        newEvent,
         isLoading
     }
 }
