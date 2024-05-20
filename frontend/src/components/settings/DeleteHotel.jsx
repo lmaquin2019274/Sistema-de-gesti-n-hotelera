@@ -88,6 +88,9 @@ export const DeleteHotel = () => {
                 password: {
                     value: ''
                 },
+                hotel: {
+                    value: 'Elegir...'
+                },
             });
             
         } catch (error) {

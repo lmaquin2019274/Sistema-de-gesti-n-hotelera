@@ -77,9 +77,8 @@ export const RestoreHotel = () => {
     const handleUpdate = (event) => {
         try {
             event.preventDefault();
-            const selectedHotel = allHotels.find(hotel => hotel.name === formState.hotel.value);
+            const selectedHotel = allHotels.find(hotel => hotel._id === formState.hotel.value);
             const hotel = selectedHotel ? selectedHotel._id : '';
-            console.log(selectedHotel)
             restoreHotel(formState.email.value, formState.password.value, hotel);
 
             setFormState({
@@ -88,6 +87,9 @@ export const RestoreHotel = () => {
                 },
                 password: {
                     value: ''
+                },
+                hotel: {
+                    value: 'Elegir...'
                 },
             });
 

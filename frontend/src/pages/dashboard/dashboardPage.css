@@ -605,3 +605,43 @@ footer p {
 .to-hotel-card:hover {
     transform: scale(1.05);
 }
+
+.buscador-box{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #aaaaaa;
+    border-radius: 15px;
+    background-color: #fff;
+    margin-top: 30px;
+    margin-left: calc(100% - 375px);
+    height: 40px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscador-box i{
+    color: #8f8f8f;
+    margin-right: 5px;
+}
+
+.buscador{
+    border: none;
+    width: 100%;
+    margin-left: 5px;
+    height: calc(100% - 7px);
+}
+
+.buscador:focus{
+    outline: none;
+}
+
+.nono{
+    margin-top: 200px;
+    margin-left: calc(100% - 50px);
+    width: 400px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #820808;
+}

@@ -9,7 +9,7 @@ export const useRestoreHotel = () => {
         const userData = JSON.parse(userDataString);
         const token = userData.token;
 
-    const restoreHotel = async(id, email, password) =>{
+    const restoreHotel = async(email, password, id) =>{
         const response = await restoreHotelRequest({
             id,
             email,
