@@ -4,6 +4,8 @@ import { LoadingSpinner } from "../LoadingSpinner";
 import { PasswordSettings } from "./user/PasswordSettings";
 import { UpdateUser } from "./user/UpdateUser";
 import { ToHotelSettings } from "./hotel/ToHotelSettings";
+import { ToRoomSettings } from "./room/ToRoomSettings"
+import { ToEventSettings } from "./event/ToEventSettings"
 
 export const Settings = () => {
     const { userSettings, isFetching, saveSettings } = useUserSettings()
@@ -40,6 +42,8 @@ export const Settings = () => {
                     </div>
                     <div className="settings-container">
                         <ToHotelSettings />
+                        <ToRoomSettings />
+                        <ToEventSettings />
                     </div>
                 </div>
             ) : (

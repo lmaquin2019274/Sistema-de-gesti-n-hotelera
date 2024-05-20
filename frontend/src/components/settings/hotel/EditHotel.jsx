@@ -149,7 +149,7 @@ export const EditHotel = ({hotelSettings, saveHotelSettings}) => {
     return (
 
         <div className='new-hotel-container'>
-            <span className='new-hotel-title'>New Hotel</span>
+            <span className='new-hotel-title'>Update Hotel</span>
             <form className='new-hotel-form'>
                 <div className='hotel-input-box'>
                     <Input

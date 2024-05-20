@@ -67,8 +67,7 @@ export const getHotelById = async (req, res) => {
 // Actualizar un hotel por ID
 export const updateHotelById = async (req, res) => {
     try {
-        const { id } = req.params;
-        const { name, location, category, comforts, capacity, imgUrl, coordenadas } = req.body;
+        const { name, location, category, comforts, capacity, imgUrl, coordenadas, id } = req.body;
 
         const updatedHotel = await Hotel.findByIdAndUpdate(id, {
             name,

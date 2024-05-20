@@ -6,6 +6,7 @@ import { Content } from "../../components/dashboard/Content";
 import { useHotels, useUserDetails, useRooms, useHotelRooms, useEvents, useHotelEvents } from "../../shared/hooks";
 
 import "./dashboardPage.css";
+import { useParams } from "react-router-dom";
 
 export const DashboardPage = () => {
     const { getHotels, allHotels, isFetching: isHotelsFetching } = useHotels();
@@ -22,6 +23,16 @@ export const DashboardPage = () => {
         getEvents(isLogged);
         getHotelEvents(isLogged);
     }, []);
+
+    const { "*": route } = useParams();
+    const hotelId = route.split("/").pop();
+
+    useEffect(() => {
+        if (hotelId) {
+            getHotelRooms(hotelId);
+            getHotelEvents(hotelId);
+        }
+    }, [hotelId]);
 
     if (isHotelsFetching || isRoomsFetching || isHotelRoomsFetching || isEventsFetching || isHotelEventsFetching) {
         return <LoadingSpinner />;

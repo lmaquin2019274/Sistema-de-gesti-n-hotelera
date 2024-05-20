@@ -40,7 +40,7 @@ router.put("/restore",[
 
 // Actualizar un hotel por ID
 router.put(
-    "/:id",
+    "/edit",
     [
         validarJWT,
         check("name", "El nombre es obligatorio").not().isEmpty(),

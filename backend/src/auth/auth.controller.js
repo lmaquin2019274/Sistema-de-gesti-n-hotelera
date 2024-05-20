@@ -45,6 +45,7 @@ export const login = async (req, res) => {
           email: user.email,
           id: user.id,
           token: token,
+          hotel: user.hotel,
         },
       });
     }
