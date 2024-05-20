@@ -1,21 +1,9 @@
-import { useUserSettings, useHotelDetails } from "../../shared/hooks";
+import { useUserSettings } from "../../shared/hooks";
 import { LoadingSpinner } from "../LoadingSpinner";
 import { NewEvent } from "./event/NewEvent";
-import { useEffect } from "react";
 
 export const EventSettings = () => {
     const { userSettings, isFetching: isUserFetching, saveSettings } = useUserSettings()
-    const { hotelDetails, isFetching: isHotelFetching, getHotelsDetails } = useHotelDetails()
-
-    const hotelId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).hotel : null;
-    useEffect(() => {
-        if (hotelId) {
-            getHotelsDetails(hotelId);
-            if (isHotelFetching) {
-                return <LoadingSpinner />
-            }
-        }
-    }, [hotelId]);
 
     if (isUserFetching) {
         return <LoadingSpinner />

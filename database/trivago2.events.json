@@ -154,4 +154,30 @@
   "price": 5000,
   "__v": 0,
   "estado": true
+},
+{
+  "_id": {
+    "$oid": "664bc0c9dd151fd5ab677ce7"
+  },
+  "name": "Torneo de rugby",
+  "description": "Este evento, abierto a todos los residentes, promete acción y entretenimiento para todas las edades. Los equipos, formados por vecinos y amigos, competirán en un ambiente amistoso pero competitivo. Ven a disfrutar del espíritu de comunidad, alentando a tus favoritos y compartiendo buenos momentos con tus vecinos.",
+  "hotel": "Parque San Ángel",
+  "capacity": 25,
+  "imgUrl": "https://www.capgemini.com/wp-content/uploads/2022/09/Capgemini-Header-1440x900-1.png",
+  "price": 350,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664bc592b692117b5b42a06e"
+  },
+  "name": "Teatro al aire libre",
+  "description": "Únase a nosotros para una noche mágica bajo las estrellas en nuestro teatro al aire libre. Disfrute de espectaculares actuaciones teatrales en un entorno único y relajante, perfecto para toda la familia. Traiga sus mantas y sillas, y disfrute de una experiencia cultural sin igual en la comodidad de nuestro hermoso condominio. ",
+  "hotel": "Parque San Ángel",
+  "capacity": 15,
+  "imgUrl": "https://cdn.pixabay.com/photo/2015/11/27/10/37/outdoor-venues-1065273_1280.jpg",
+  "price": 200,
+  "estado": true,
+  "__v": 0
 }]

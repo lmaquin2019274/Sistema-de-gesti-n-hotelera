@@ -4,25 +4,28 @@ import { DeleteHotel } from "./hotel/DeleteHotel"
 import { RestoreHotel } from "./hotel/RestoreHotel";
 import { NewHotel } from "./hotel/NewHotel";
 import { EditHotel } from "./hotel/EditHotel";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const HotelSettings = () => {
     const { userSettings, isFetching: isUserFetching, saveSettings } = useUserSettings()
     const { editHotel, isLoading } = useEditHotel()
     const { hotelDetails, isFetching: isHotelFetching, getHotelsDetails } = useHotelDetails()
+    const [loading, setLoading] = useState(true);
 
     const hotelId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).hotel : null;
     useEffect(() => {
         if (hotelId) {
-            getHotelsDetails(hotelId);
-            if (isHotelFetching) {
-                return <LoadingSpinner />
-            }
+            getHotelsDetails(hotelId)
+                .then(() => setLoading(false)) // Cuando la carga esté completa, cambiar el estado de carga a falso
+                .catch((error) => {
+                    console.error(error);
+                    setLoading(false); // En caso de error, también cambiar el estado de carga a falso
+                });
         }
     }, [hotelId]);
 
-    if (isUserFetching || isLoading) {
-        return <LoadingSpinner />
+    if (isHotelFetching || loading) {
+        return <LoadingSpinner />;
     }
 
     return (

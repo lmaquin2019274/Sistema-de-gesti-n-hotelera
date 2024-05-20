@@ -285,4 +285,34 @@
   "reservations": [],
   "__v": 0,
   "estado": true
+},
+{
+  "_id": {
+    "$oid": "664bd9e26e8783dfd7ec643c"
+  },
+  "hotel": {
+    "$oid": "664a6d4dfeee966e99fcba5a"
+  },
+  "name": "Habitación let go",
+  "available": true,
+  "price": 200,
+  "capacity": 2,
+  "imgUrl": "https://img.freepik.com/fotos-premium/habitacion-vista-al-bosque_611456-199.jpg",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664bda066e8783dfd7ec643f"
+  },
+  "hotel": {
+    "$oid": "664a6d4dfeee966e99fcba5a"
+  },
+  "name": "Habitación estándar",
+  "available": true,
+  "price": 100,
+  "capacity": 2,
+  "imgUrl": "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?cs=srgb&dl=pexels-zvolskiy-2062431.jpg&fm=jpg",
+  "estado": true,
+  "__v": 0
 }]
