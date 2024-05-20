@@ -11,9 +11,6 @@ export const HotelSettings = () => {
         return <LoadingSpinner />
     }
 
-    console.log(userSettings.role)
-    console.log(userSettings.username)
-
     return (
         <div className="settings-supreme">
             <span className="title-supreme">Hotel settings</span>

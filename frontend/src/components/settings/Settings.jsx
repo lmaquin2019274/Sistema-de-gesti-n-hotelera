@@ -38,7 +38,7 @@ export const Settings = () => {
                         <UserSettings settings={userSettings} saveSettings={saveSettings} />
                         <PasswordSettings />
                     </div>
-                    <div>
+                    <div className="settings-container">
                         <ToHotelSettings />
                     </div>
                 </div>

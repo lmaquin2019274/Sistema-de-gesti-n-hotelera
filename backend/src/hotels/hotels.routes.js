@@ -32,6 +32,12 @@ router.get("/bad", getBadHotels);
 // Obtener un hotel por ID
 router.get("/:id", getHotelById);
 
+router.put("/delete",[
+], deleteHotelById);
+
+router.put("/restore",[
+], restoreHotelById);
+
 // Actualizar un hotel por ID
 router.put(
     "/:id",
@@ -46,10 +52,3 @@ router.put(
     ],
     updateHotelById
 );
-
-// Eliminar un hotel por ID
-router.delete("/delete",[
-], deleteHotelById);
-
-router.post("/restore",[
-], restoreHotelById);

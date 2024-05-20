@@ -18,6 +18,8 @@ export const useDeleteHotel = () => {
 
         setIsLoading(false)
 
+        toast.success('hotel eliminado exitosamente');
+
         if(response.error){
             return toast.error(response.e?.response?.data || 'Ocurrio un error al eliminar hotel, intentalo de nuevo')
         }

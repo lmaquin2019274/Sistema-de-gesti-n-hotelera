@@ -16,6 +16,8 @@ export const useRestoreHotel = () => {
             password
         }, token)
 
+        toast.success('hotel restaurado exitosamente');
+
         setIsLoading(false)
 
         if(response.error){

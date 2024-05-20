@@ -7,9 +7,6 @@ export const useUpdateSettings = () => {
     const [users, setUser] = useState([]);
 
     const user = async (email, role, hotel) => {
-        console.log(email);
-        console.log(role);
-        console.log(hotel);
         setIsLoading(true);
         const userDataString = localStorage.getItem('user');
         const userData = JSON.parse(userDataString);

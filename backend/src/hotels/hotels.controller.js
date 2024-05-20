@@ -2,6 +2,7 @@ import Hotel from './hotels.model.js'
 import User from "../users/user.model.js";
 import Event from '../events/events.model.js'
 import Room from '../rooms/rooms.model.js'
+import bcryptjs from "bcryptjs";
 
 // Crear un hotel
 export const createHotel = async (req, res) => {
@@ -112,7 +113,7 @@ export const deleteHotelById = async (req, res) => {
             }
 
             const updateEvents = Event.updateMany(
-                { hotel: updatedHotel.name },
+                { hotel: deletedHotel.name },
                 { estado: false }
             );
 
@@ -144,18 +145,18 @@ export const restoreHotelById = async (req, res) => {
 
         if (user && (await bcryptjs.compare(password, user.password))) {
 
-            const deletedHotel = await Hotel.findByIdAndUpdate(
+            const restoreHotel = await Hotel.findByIdAndUpdate(
                 id,
                 { estado: true },
                 { new: true }
             );
 
-            if (!deletedHotel) {
+            if (!restoreHotel) {
                 return res.status(404).send('Hotel not found');
             }
 
             const updateEvents = Event.updateMany(
-                { hotel: updatedHotel.name },
+                { hotel: restoreHotel.name },
                 { estado: true }
             );
 

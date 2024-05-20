@@ -81,6 +81,16 @@ export const RestoreHotel = () => {
             const hotel = selectedHotel ? selectedHotel._id : '';
             console.log(selectedHotel)
             restoreHotel(formState.email.value, formState.password.value, hotel);
+
+            setFormState({
+                email: {
+                    value: ''
+                },
+                password: {
+                    value: ''
+                },
+            });
+
         } catch (error) {
             console.error(error);
             toast.error('Error al restaurar al hotel. Por favor, inténtalo de nuevo.');

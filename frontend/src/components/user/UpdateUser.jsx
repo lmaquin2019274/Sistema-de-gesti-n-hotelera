@@ -87,9 +87,8 @@ export const UpdateUser = () => {
     const handleUpdate = (event) => {
         try {
             event.preventDefault();
-            const selectedHotel = allHotels.find(hotel => hotel.name === formState.hotel.value);
+            const selectedHotel = allHotels.find(hotel => hotel._id === formState.hotel.value);
             const hotel = selectedHotel ? selectedHotel._id : '';
-            console.log(selectedHotel)
             user(formState.email.value, formState.role.value, hotel);
         } catch (error) {
             console.error(error);

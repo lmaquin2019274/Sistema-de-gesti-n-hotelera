@@ -96,6 +96,11 @@ export const deleteEvent = async (req, res) => {
 export const findEventsByHotel = async (req, res) => {
     const { hotelId } = req.params;
 
+    if(hotelId === 'settings' || hotelId === 'hotel' || hotelId === 'event' || hotelId === 'room' 
+    || hotelId === 'hotelSettings' || hotelId === 'eventSettings' || hotelId === 'roomSettings' || hotelId === 'auth'){
+        return;
+    }
+
     if (!mongoose.isValidObjectId(hotelId)) {
         return;
     }

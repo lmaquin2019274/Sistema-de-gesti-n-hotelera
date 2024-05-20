@@ -113,15 +113,14 @@ export const getBadHotels = async () => {
         }
     }
 }
-export const deleteHotel = async (data) => {
+export const deleteHotel = async (data, token) => {
     console.log(data)
     try{
-        const response = await apiClient.delete('/hotel/delete', data, {
+        return await apiClient.put('/hotel/delete', data, {
             headers: {
                 'x-token': `${token}`
             }
         });
-        return response;
     }catch(e){
         return{
             error: true,
@@ -131,7 +130,7 @@ export const deleteHotel = async (data) => {
 }
 export const restoreHotel = async (data, token) => {
     try{
-        const response = await apiClient.post('/hotel/restore', data, {
+        const response = await apiClient.put('/hotel/restore', data, {
             headers: {
                 'x-token': `${token}`
             }

@@ -80,6 +80,16 @@ export const DeleteHotel = () => {
             const selectedHotel = allHotels.find(hotel => hotel._id === formState.hotel.value);
             const hotel = selectedHotel ? selectedHotel._id : '';
             deleteHotel(formState.email.value, formState.password.value, hotel);
+
+            setFormState({
+                email: {
+                    value: ''
+                },
+                password: {
+                    value: ''
+                },
+            });
+            
         } catch (error) {
             console.error(error);
             toast.error('Error al eliminar al hotel. Por favor, inténtalo de nuevo.');
