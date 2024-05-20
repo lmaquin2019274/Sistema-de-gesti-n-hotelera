@@ -18,7 +18,7 @@ import { validarJWT } from "../middlewares/validar-jwt.js";
 const router = Router()
 
 router.post("/", [
-    //validarJWT,
+    validarJWT,
     check("hotel", "El nombre del hotel es obligatorio").notEmpty(),
     check("name", "El nombre es obligatorio").notEmpty(),
     check("price", "El precio de la habitación es obligatorio").notEmpty(),

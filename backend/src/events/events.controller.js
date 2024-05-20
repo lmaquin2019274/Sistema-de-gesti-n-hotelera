@@ -28,13 +28,12 @@ export const getIdEvent = async (req, res) => {
 
 export const createEvent = async (req, res) => {
     try {
-        const { name, description, hotel, date, capacity, imgUrl, price } = req.body;
+        const { name, description, hotel, capacity, imgUrl, price } = req.body;
 
         const newEvent = new Event({
             name,
             description,
             hotel,
-            date,
             capacity,
             imgUrl,
             price
@@ -50,8 +49,7 @@ export const createEvent = async (req, res) => {
 
 export const updateEvent = async (req, res) => {
     try {
-        const eventId = req.params.id;
-        const { name, description, hotel, date, capacity, imgUrl, price } = req.body;
+        const { eventId, name, description, hotel, date, capacity, imgUrl, price } = req.body;
 
         const updatedEvent = await Event.findByIdAndUpdate(eventId, {
             name,

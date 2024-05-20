@@ -11,6 +11,7 @@ import { EventView } from "../events/EventView";
 import { HotelEvents } from "../events/HotelEvents";
 import { Home } from "../Home";
 import { HotelSettings } from '../settings/HotelSettings'
+import { EventSettings } from '../settings/EventSettings'
 
 export const Content = ({hotels, getHotels, rooms, getRooms, hotelRooms, events, getEvents, hotelEvents}) => {
     return(
@@ -19,6 +20,7 @@ export const Content = ({hotels, getHotels, rooms, getRooms, hotelRooms, events,
                 <Route path="/" element={<Home/>}/>
                 <Route path="settings" element={<Settings/>}/>
                 <Route path="hotelSettings" element={<HotelSettings/>}/>
+                <Route path="eventSettings" element={<EventSettings/>}/>
                 <Route path="hotel" element={<Hotels hotels={hotels}/>}/>
                 <Route path="hotel/:id" element={<HotelView getHotels={getHotels}/>}/>
                 <Route path="room" element={<Rooms rooms={rooms}/>}/>

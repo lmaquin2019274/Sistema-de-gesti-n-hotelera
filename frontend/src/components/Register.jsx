@@ -106,7 +106,7 @@ export const Register = ({ switchAuthHandler }) => {
                         showErrorMessage={formState.email.showError}
                         validationMessage={emailValidationMessage}
                     />
-                    <i class="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div className="input-box">
                     <Input
@@ -134,7 +134,7 @@ export const Register = ({ switchAuthHandler }) => {
                         showErrorMessage={formState.password.showError}
                         validationMessage={validatePasswordMessage}
                     />
-                    <i class="fa-solid fa-key"></i>
+                    <i className="fa-solid fa-key"></i>
                 </div>
                 <div className="input-box">
                     <Input
@@ -148,7 +148,7 @@ export const Register = ({ switchAuthHandler }) => {
                         showErrorMessage={formState.passwordConfirm.showError}
                         validationMessage={passwordConfirmationMessage}
                     />
-                    <i class="fa-solid fa-lock"></i>
+                    <i className="fa-solid fa-lock"></i>
                 </div>
                 <button onClick={handleRegister} disabled={isSubmitButtonDisable}>
                     Register

@@ -84,7 +84,7 @@ export const Login = ({ switchAuthHandler }) => {
                         showErrorMessage={formState.email.showError}
                         validationMessage={emailValidationMessage}
                     />
-                    <i class="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div className="input-box">
                     <Input
@@ -98,7 +98,7 @@ export const Login = ({ switchAuthHandler }) => {
                         showErrorMessage={formState.password.showError}
                         validationMessage={validatePasswordMessage}
                     />
-                    <i class="fa-solid fa-lock"></i>
+                    <i className="fa-solid fa-lock"></i>
                 </div>
                 <button onClick={handleLogin} disabled={isSubmitButtonDisable} className="login__button">
                     Log in

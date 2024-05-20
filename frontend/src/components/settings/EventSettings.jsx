@@ -1,9 +1,9 @@
 import { useUserSettings, useEditHotel, useHotelDetails } from "../../shared/hooks";
 import { LoadingSpinner } from "../LoadingSpinner";
-import { EditHotel } from "./hotel/EditHotel";
+import { NewEvent } from "./event/NewEvent";
 import { useEffect } from "react";
 
-export const HotelSettings = () => {
+export const EventSettings = () => {
     const { userSettings, isFetching: isUserFetching, saveSettings } = useUserSettings()
     const { editHotel, isLoading } = useEditHotel()
     const { hotelDetails, isFetching: isHotelFetching, getHotelsDetails } = useHotelDetails()
@@ -12,16 +12,19 @@ export const HotelSettings = () => {
     useEffect(() => {
         if (hotelId) {
             getHotelsDetails(hotelId);
+            if (isHotelFetching) {
+                return <LoadingSpinner />
+            }
         }
     }, [hotelId]);
 
-    if (isUserFetching || isHotelFetching || isLoading) {
+    if (isUserFetching) {
         return <LoadingSpinner />
     }
 
     return (
         <div className="settings-supreme">
-            <span className="title-supreme">Hotel settings</span>
+            <span className="title-supreme">Event settings</span>
             {userSettings && userSettings.role === 'CLIENT_ROLE' ? (
                 <div className="settings-container">
                     Bro? que haces tú aqui? 🤨
@@ -29,13 +32,13 @@ export const HotelSettings = () => {
             ) : userSettings && userSettings.role === 'MANAGER_ROLE' ? (
                 <div>
                     <div className="settings-container">
-                        Bro? sabes bien que solo los admin pueden 🤨
+                        Bro? sabes bien que solo los admin pueden editar eventos 🤨
                     </div>
                 </div>
             ) : userSettings && userSettings.role === 'ADMIN_ROLE' ? (
                 <div>
                     <div className="settings-container">
-                        <EditHotel hotelSettings={hotelDetails} saveHotelSettings={editHotel} />
+                        <NewEvent/>
                     </div>
                 </div>
             ) : (

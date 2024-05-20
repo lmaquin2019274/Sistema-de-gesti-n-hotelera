@@ -207,6 +207,35 @@ export const getEvents = async () => {
         }
     }
 }
+export const crateEvent = async (data, token) => {
+    console.log(data)
+    try{
+        return await apiClient.post('/event', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const crateRoom = async (data) => {
+    try{
+        return await apiClient.post('/room', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
 export const getEventDetails = async (eventId) => {
     try{
         return await apiClient.get(`/event/${eventId}`)

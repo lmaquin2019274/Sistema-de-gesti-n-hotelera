@@ -15,10 +15,13 @@ export const HotelSettings = () => {
     useEffect(() => {
         if (hotelId) {
             getHotelsDetails(hotelId);
+            if (isHotelFetching) {
+                return <LoadingSpinner />
+            }
         }
     }, [hotelId]);
 
-    if (isUserFetching || isHotelFetching || isLoading) {
+    if (isUserFetching || isLoading) {
         return <LoadingSpinner />
     }
 
