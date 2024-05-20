@@ -103,6 +103,20 @@ export const createHotel = async (data) => {
         }
     }
 }
+export const editHotel = async (data, token) => {
+    try{
+        return await apiClient.put('/hotel/edit', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
 export const getBadHotels = async () => {
     try{
         return await apiClient.get('/hotel/bad')

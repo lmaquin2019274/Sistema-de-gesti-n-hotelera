@@ -1,9 +1,9 @@
-import { UserSettings } from "../user/UserSettings";
+import { UserSettings } from "./user/UserSettings";
 import { useUserSettings } from "../../shared/hooks";
 import { LoadingSpinner } from "../LoadingSpinner";
-import { PasswordSettings } from "./PasswordSettings";
-import { UpdateUser } from "../user/UpdateUser";
-import { ToHotelSettings } from "./ToHotelSettings";
+import { PasswordSettings } from "./user/PasswordSettings";
+import { UpdateUser } from "./user/UpdateUser";
+import { ToHotelSettings } from "./hotel/ToHotelSettings";
 
 export const Settings = () => {
     const { userSettings, isFetching, saveSettings } = useUserSettings()

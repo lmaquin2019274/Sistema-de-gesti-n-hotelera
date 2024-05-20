@@ -17,7 +17,6 @@ export const HotelView = ({ getHotels }) => {
     const { isFetching, getHotelsDetails, hotelDetails } = useHotelDetails();
 
     const { id } = useParams()
-    console.log(hotelDetails)
     useEffect(() => {
         getHotelsDetails(id)
     }, [])
