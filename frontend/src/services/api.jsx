@@ -28,6 +28,19 @@ export const register = async (data) => {
         }
     }
 }
+
+export const reserveRoom = async (roomId) => {
+    try {
+        return await apiClient.put(`/room/reserve/${roomId}`);
+    } catch (e) {
+        console.log(e);
+        return {
+            error: true,
+            e
+        };
+    }
+};
+
 export const getHotelsDetails = async (hotelId) => {
     try{
         return await apiClient.get(`/hotel/${hotelId}`)

@@ -14,15 +14,19 @@ export const ImgRoom = ({ imgUrl }) => {
 
 export const RoomView = ({ getRooms }) => {
     const { isFetching, getRoomsDetails, roomDetails } = useRoomDetails();
+    const { id } = useParams();
 
-    const { id } = useParams()
     useEffect(() => {
-        getRoomsDetails(id)
-    }, [])
+        getRoomsDetails(id);
+    }, []);
 
     if (isFetching) {
-        return <LoadingSpinner />
+        return <LoadingSpinner />;
     }
+
+    const handleReserve = () => {
+        getRooms();  
+    };
 
     return (
         <div className="channel-container">
@@ -30,16 +34,17 @@ export const RoomView = ({ getRooms }) => {
                 <ImgRoom imgUrl={roomDetails.data.imgUrl} />
                 <div className="channel-description-box2">
                     <RoomDescription
-                        roomId={roomDetails.data.id}
+                        roomId={roomDetails.data._id}  
                         name={roomDetails.data.name}
                         hotel={roomDetails.data.hotel}
                         available={roomDetails.data.available}
                         price={roomDetails.data.price}
                         capacity={roomDetails.data.capacity}
                         getRooms={getRooms}
+                        onReserve={handleReserve} 
                     />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
