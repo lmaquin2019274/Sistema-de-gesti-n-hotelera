@@ -27,7 +27,7 @@ const roomSchema = mongoose.Schema({
         default: 'none'
     },
     reservations: [{
-        starDate: {
+        startDate: {
             type: Date
         },
         endDate: {

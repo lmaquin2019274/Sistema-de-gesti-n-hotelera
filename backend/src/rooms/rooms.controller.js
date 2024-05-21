@@ -7,7 +7,6 @@ export const createRoom = async (req, res) => {
     const { hotel, name, price, capacity, reservations, imgUrl } = req.body;
 
     try {
-        // Verificar si el hotel existe
         const existingHotel = await Hotel.findById(hotel);
         if (!existingHotel) {
             return res.status(404).json({ msg: 'Hotel not found' });
@@ -121,6 +120,32 @@ export const getRoomsByHotelId = async (req, res) => {
     }
 };
 
+// Actualizar Disponibilidad de Habitación para Reservar
+export const reserveRoom = async (req, res = response) => {
+    const { id } = req.params;
+    
+    try {
+        const room = await Room.findById(id);
+        if (!room) {
+            return res.status(404).json({ msg: 'Room not found' });
+        }
+
+        if (!room.available) {
+            return res.status(400).json({ msg: 'Room is already reserved' });
+        }
+
+        room.available = false;
+        await room.save();
+
+        res.status(200).json({
+            msg: 'Room reserved successfully',
+            room
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error reserving the room' });
+    }
+};
 
 // Editar Habitación
 export const updateRoom = async (req, res = response) => {

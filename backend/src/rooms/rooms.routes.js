@@ -5,6 +5,7 @@ import {
     getRoom,
     getRoomByName,
     getRoomsByHotelId,
+    reserveRoom,
     updateRoom,
     updateRoomAvailability,
     deleteRoom,
@@ -58,6 +59,10 @@ router.get("/search/:hotelId", [
 router.put("/:id", [
     validarCampos
 ], updateRoom);
+
+router.put("/reserve/:id", [
+    validarCampos
+], reserveRoom);
 
 router.put("/available/:id", [
     check("available", "El estado de disponibilidad es obligatorio").isBoolean(),
