@@ -4,6 +4,7 @@ import {
     createRoom,
     getRoom,
     getRoomByName,
+<<<<<<< HEAD
     getRoomsByHotelId,
     reserveRoom,
     updateRoom,
@@ -13,12 +14,24 @@ import {
 } from "./rooms.controller.js"
 import { validarCampos } from "../middlewares/validar-campos.js";
 //import { tieneRole } from "../middlewares/validar-roles.js"
+=======
+    updateRoom,
+    updateRoomAvailability,
+    deleteRoom
+} from "./rooms.controller.js"
+import { validarCampos } from "../middlewares/validar-campos.js";
+import { tieneRole } from "../middlewares/validar-roles.js"
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router()
 
 router.post("/", [
+<<<<<<< HEAD
     //validarJWT,
+=======
+    validarJWT,
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
     check("hotel", "El nombre del hotel es obligatorio").notEmpty(),
     check("name", "El nombre es obligatorio").notEmpty(),
     check("price", "El precio de la habitación es obligatorio").notEmpty(),
@@ -46,24 +59,33 @@ router.get("/", [
     validarCampos
 ], getRoom);
 
+<<<<<<< HEAD
 router.get("/:id", getRoomById);
 
+=======
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 router.get("/name", [
     validarCampos
 ], getRoomByName);
 
+<<<<<<< HEAD
 router.get("/search/:hotelId", [
     validarCampos
 ], getRoomsByHotelId);
 
+=======
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 router.put("/:id", [
     validarCampos
 ], updateRoom);
 
+<<<<<<< HEAD
 router.put("/reserve/:id", [
     validarCampos
 ], reserveRoom);
 
+=======
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 router.put("/available/:id", [
     check("available", "El estado de disponibilidad es obligatorio").isBoolean(),
     validarCampos

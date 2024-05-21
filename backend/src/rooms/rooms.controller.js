@@ -4,15 +4,26 @@ import Hotel from '../hotels/hotels.model.js';
 
 // Crear Habitación
 export const createRoom = async (req, res) => {
+<<<<<<< HEAD
     const { hotel, name, price, capacity, reservations, imgUrl } = req.body;
 
     try {
+=======
+    const { hotel, name, price, capacity, reservations } = req.body;
+
+    try {
+        // Verificar si el hotel existe
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
         const existingHotel = await Hotel.findById(hotel);
         if (!existingHotel) {
             return res.status(404).json({ msg: 'Hotel not found' });
         }
 
+<<<<<<< HEAD
         const room = new Room({ hotel, name, price, capacity, reservations, imgUrl });
+=======
+        const room = new Room({ hotel, name, price, capacity, reservations });
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 
         await room.save();
         res.status(200).json({
@@ -29,6 +40,7 @@ export const getRoom = async (req = request, res = response) => {
     const { limite, desde } = req.query;
     const query = { available: true };
 
+<<<<<<< HEAD
     try {
         const [total, rooms] = await Promise.all([
             Room.countDocuments(query),
@@ -66,6 +78,21 @@ export const getRoomById = async (req, res) => {
     }
 };
 
+=======
+    const [total, room] = await Promise.all([
+        Room.countDocuments(query),
+        Room.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite)),
+    ]);
+
+    res.status(200).json({
+        total,
+        room
+    });
+}
+
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 // Buscar por nombre
 export const getRoomByName = async (req, res = response) => {
     const { name } = req.query;
@@ -90,6 +117,7 @@ export const getRoomByName = async (req, res = response) => {
     }
 }
 
+<<<<<<< HEAD
 
 export const getRoomsByHotelId = async (req, res) => {
     const { hotelId } = req.params;
@@ -147,6 +175,8 @@ export const reserveRoom = async (req, res = response) => {
     }
 };
 
+=======
+>>>>>>> 00ef0ad4ad9ed86f369bdfeed4af5169c8fcea69
 // Editar Habitación
 export const updateRoom = async (req, res = response) => {
     const { id } = req.params;
