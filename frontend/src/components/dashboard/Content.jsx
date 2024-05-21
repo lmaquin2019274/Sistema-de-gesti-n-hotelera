@@ -15,6 +15,7 @@ import { EventSettings } from '../settings/EventSettings'
 import { RoomSettings } from '../settings/RoomSettings'
 
 export const Content = ({hotels, getHotels, rooms, getRooms, hotelRooms, events, getEvents, hotelEvents}) => {
+
     return(
         <div className="content-container">
             <Routes>

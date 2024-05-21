@@ -17,9 +17,6 @@ export const useBadHotels = () => {
             }
 
             setHotels(hotelsData.data)
-
-            console.log(hotelsData.data);
-            console.log('hotels: ',hotels);
         } catch (error) {
             console.error('Error fetching hotels:', error);
         }

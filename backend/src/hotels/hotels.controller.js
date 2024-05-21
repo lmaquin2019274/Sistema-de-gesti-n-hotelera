@@ -95,8 +95,6 @@ export const deleteHotelById = async (req, res) => {
     try {
         const { id, email, password } = req.body;
 
-        console.log('email: ',email)
-
         const user = await User.findOne({ email: email.toLowerCase() });
 
         if (user && (await bcryptjs.compare(password, user.password))) {

@@ -1,11 +1,13 @@
 import { response, request } from "express";
+import bcryptjs from "bcryptjs";
 import Room from './rooms.model.js';
 import Hotel from '../hotels/hotels.model.js';
 import mongoose from "mongoose";
+import User from "../users/user.model.js";
 
 // Crear Habitación
 export const createRoom = async (req, res) => {
-    const { hotel, name, price, capacity, reservations, imgUrl } = req.body;
+    const { hotel, name, price, capacity, imgUrl } = req.body;
 
     try {
         // Verificar si el hotel existe
@@ -14,7 +16,9 @@ export const createRoom = async (req, res) => {
             return res.status(404).json({ msg: 'Hotel not found' });
         }
 
-        const room = new Room({ hotel, name, price, capacity, reservations, imgUrl });
+        const hotelId = existingHotel._id; 
+
+        const room = new Room({ hotel: hotelId, name, price, capacity, imgUrl });
 
         await room.save();
         res.status(200).json({
@@ -50,6 +54,23 @@ export const getRoom = async (req = request, res = response) => {
         res.status(500).json({ error: 'Something went wrong' });
     }
 }
+
+export const getBadRoom = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const room = await Room.findOne({ hotel: id, estado: false })
+            .populate('hotel', 'name')
+            .exec();
+        if (!room) {
+            return res.status(404).send('Room not found');
+        }
+        return res.status(200).json(room);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Something went wrong');
+    }
+};
+
 
 
 export const getRoomById = async (req, res) => {
@@ -112,7 +133,7 @@ export const getRoomsByHotelId = async (req, res) => {
             return res.status(404).send('Hotel not found');
         }
 
-        const rooms = await Room.find({ hotel: hotel._id });
+        const rooms = await Room.find({ hotel: hotel._id, estado: true });
         const roomsWithHotelName = rooms.map(room => ({
             hotel: hotel.name,
             _id: room._id,
@@ -183,9 +204,13 @@ export const updateRoomAvailability = async (req, res = response) => {
 
 // Eliminar Habitaciones
 export const deleteRoom = async (req, res) => {
-    const { id } = req.params;
-
     try {
+        const { id, email, password } = req.body;
+
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (user && (await bcryptjs.compare(password, user.password))) {
+
         const room = await Room.findByIdAndUpdate(
             id,
             { estado: false },
@@ -197,6 +222,43 @@ export const deleteRoom = async (req, res) => {
         }
 
         res.status(200).json({ message: 'Room eliminado correctamente' });
+    }
+    if (!user) {
+        return res
+            .status(400)
+            .send(`Wrong credentials, ${email} doesn't exists en database`);
+    }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error al eliminar el Room' });
+    }
+};
+
+export const restoreRoom = async (req, res) => {
+    try {
+        const { id, email, password } = req.body;
+
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (user && (await bcryptjs.compare(password, user.password))) {
+
+        const room = await Room.findByIdAndUpdate(
+            id,
+            { estado: true },
+            { new: true }
+        );
+
+        if (!room) {
+            return res.status(404).json({ message: 'Room no encontrado' });
+        }
+
+        res.status(200).json({ message: 'Room eliminado correctamente' });
+    }
+    if (!user) {
+        return res
+            .status(400)
+            .send(`Wrong credentials, ${email} doesn't exists en database`);
+    }
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error al eliminar el Room' });

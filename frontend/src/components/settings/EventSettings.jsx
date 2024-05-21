@@ -1,6 +1,8 @@
 import { useUserSettings } from "../../shared/hooks";
 import { LoadingSpinner } from "../LoadingSpinner";
 import { NewEvent } from "./event/NewEvent";
+import { DeleteEvent } from "./event/DeleteEvent";
+import { RestoreEvent } from "./event/RestoreEvent";
 
 export const EventSettings = () => {
     const { userSettings, isFetching: isUserFetching, saveSettings } = useUserSettings()
@@ -26,6 +28,10 @@ export const EventSettings = () => {
                 <div>
                     <div className="settings-container">
                         <NewEvent/>
+                    </div>
+                    <div className="settings-container">
+                        <DeleteEvent/>
+                        <RestoreEvent/>
                     </div>
                 </div>
             ) : (

@@ -1,5 +1,7 @@
 import { response, request } from "express";
+import bcryptjs from "bcryptjs";
 import Event from "./events.model.js";
+import User from "../users/user.model.js";
 import Hotel from '../hotels/hotels.model.js';
 import mongoose from 'mongoose';
 
@@ -12,10 +14,26 @@ export const listEvents = async (req, res) => {
     }
 };
 
+
+export const listBadEvents = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const hotel = await Hotel.findById(id);
+        const event = await Event.findOne({hotel: hotel.name, estado: false});
+        if (!event) {
+            return res.status(404).send('Event not found');
+        }
+        return res.status(200).json(event);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Something went wrong');
+    }
+};
+
 export const getIdEvent = async (req, res) => {
     try {
         const { id } = req.params;
-        const event = await Event.findById(id);
+        const event = await Event.findOne({_id: id, estado: true});
         if (!event) {
             return res.status(404).send('Event not found');
         }
@@ -73,19 +91,57 @@ export const updateEvent = async (req, res) => {
 
 export const deleteEvent = async (req, res) => {
     try {
-        const eventId = req.params.id;
+        const { id, email, password } = req.body;
 
-        const deletedEvent = await Event.findByIdAndUpdate(
-            id,
-            { estado: false },
-            { new: true }
-        );
+        const user = await User.findOne({ email: email.toLowerCase() });
 
-        if (!deletedEvent) {
-            return res.status(404).json({ error: "Event not found" });
+        if (user && (await bcryptjs.compare(password, user.password))) {
+
+            const deletedEvent = await Event.findByIdAndUpdate(
+                id,
+                { estado: false },
+                { new: true }
+            );
+
+            if (!deletedEvent) {
+                return res.status(404).json({ error: "Event not found" });
+            }
+
+            res.status(200).json({ message: "Deleted Event", deletedEvent });
+        } if (!user) {
+            return res
+                .status(400)
+                .send(`Wrong credentials, ${email} doesn't exists en database`);
         }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 
-        res.status(200).json({ message: "Deleted Event", deletedEvent });
+export const restoreEvent = async (req, res) => {
+    try {
+        const { id, email, password } = req.body;
+
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (user && (await bcryptjs.compare(password, user.password))) {
+
+            const deletedEvent = await Event.findByIdAndUpdate(
+                id,
+                { estado: true },
+                { new: true }
+            );
+
+            if (!deletedEvent) {
+                return res.status(404).json({ error: "Event not found" });
+            }
+
+            res.status(200).json({ message: "Deleted Event", deletedEvent });
+        } if (!user) {
+            return res
+                .status(400)
+                .send(`Wrong credentials, ${email} doesn't exists en database`);
+        }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -94,8 +150,8 @@ export const deleteEvent = async (req, res) => {
 export const findEventsByHotel = async (req, res) => {
     const { hotelId } = req.params;
 
-    if(hotelId === 'settings' || hotelId === 'hotel' || hotelId === 'event' || hotelId === 'room' 
-    || hotelId === 'hotelSettings' || hotelId === 'eventSettings' || hotelId === 'roomSettings' || hotelId === 'auth'){
+    if (hotelId === 'settings' || hotelId === 'hotel' || hotelId === 'event' || hotelId === 'room'
+        || hotelId === 'hotelSettings' || hotelId === 'eventSettings' || hotelId === 'roomSettings' || hotelId === 'auth') {
         return;
     }
 
@@ -110,7 +166,7 @@ export const findEventsByHotel = async (req, res) => {
             return res.status(404).send('Hotel not found');
         }
 
-        const events = await Event.find({ hotel: hotel.name });
+        const events = await Event.find({ hotel: hotel.name, estado: true });
         const eventsWithHotelName = events.map(event => ({
             hotel: hotel.name,
             _id: event._id,
@@ -119,7 +175,7 @@ export const findEventsByHotel = async (req, res) => {
             price: event.price,
             capacity: event.capacity,
             imgUrl: event.imgUrl,
-            reservations: event.reservations,   
+            reservations: event.reservations,
         }));
 
         return res.status(200).json({ total: eventsWithHotelName.length, events: eventsWithHotelName });
@@ -131,7 +187,7 @@ export const findEventsByHotel = async (req, res) => {
 
 export const findEventsByName = async (req, res) => {
     try {
-        const name = req.body.name; 
+        const name = req.body.name;
 
         const events = await Event.find({ name: name });
 

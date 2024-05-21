@@ -1,6 +1,9 @@
 import { useUserSettings } from "../../shared/hooks";
 import { LoadingSpinner } from "../LoadingSpinner";
 import { NewRoom } from "./room/NewRoom";
+import { DeleteRoom } from "./room/DeleteRoom";
+import { RestoreRoom } from "./room/RestoreRoom";
+
 export const RoomSettings = () => {
     const { userSettings, isFetching: isUserFetching, saveSettings } = useUserSettings()
 
@@ -25,6 +28,10 @@ export const RoomSettings = () => {
                 <div>
                     <div className="settings-container">
                         <NewRoom/>
+                    </div>
+                    <div className="settings-container">
+                        <DeleteRoom/>
+                        <RestoreRoom/>
                     </div>
                 </div>
             ) : (
