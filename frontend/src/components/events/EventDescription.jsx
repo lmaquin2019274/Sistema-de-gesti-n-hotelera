@@ -1,9 +1,6 @@
-/* eslint-disable react/prop-types */
+import React from 'react';
 import { useUserDetails } from "../../shared/hooks";
-
-const ReserveButton = ({ hotelId, getEvents }) => {
-    
-}
+import ReservationForm from "./ReservationForm";
 
 export const EventDescription = ({
     name,
@@ -11,7 +8,8 @@ export const EventDescription = ({
     hotel,
     capacity,
     description,
-    _id
+    eventId,
+    hotelId
 }) => {
     const { isLogged } = useUserDetails();
 
@@ -20,14 +18,6 @@ export const EventDescription = ({
             <div className="channel-description-title-box">
                 <span className="channel-description-title">
                     {name}
-                    <span>
-                        {isLogged && (
-                            <ReserveButton
-                                className='channel-follow-button'
-                                eventId={_id}
-                            />
-                        )}
-                    </span>
                 </span>
             </div>
             <div className="channel-description-box">
@@ -47,6 +37,9 @@ export const EventDescription = ({
                     <span className="channel-description-title2">Description:</span>
                     <span className="channel-description">{description}</span>
                 </div>
+                {isLogged && (
+                    <ReservationForm eventId={eventId} hotel={hotelId} />
+                )}
             </div>
         </div>
     )

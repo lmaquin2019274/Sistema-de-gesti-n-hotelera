@@ -1,16 +1,13 @@
-/* eslint-disable react/prop-types */
+import React from 'react';
 import { useUserDetails } from "../../shared/hooks";
-
-const ReserveButton = ({ hotelId, getRooms }) => {
-    
-}
+import ReservationForm from "./ReservationForm";
 
 export const RoomDescription = ({
     name,
     price,
     hotel,
     capacity,
-    _id
+    roomId
 }) => {
     const { isLogged } = useUserDetails();
 
@@ -19,14 +16,6 @@ export const RoomDescription = ({
             <div className="channel-description-title-box">
                 <span className="channel-description-title">
                     {name}
-                    <span>
-                        {isLogged && (
-                            <ReserveButton
-                                className='channel-follow-button'
-                                roomId={_id}
-                            />
-                        )}
-                    </span>
                 </span>
             </div>
             <div className="channel-description-box">
@@ -43,6 +32,9 @@ export const RoomDescription = ({
                     <span className="channel-description">{capacity}</span>
                 </div>
             </div>
+            {isLogged && (
+                <ReservationForm roomId={roomId} hotel={hotel} />
+            )}
         </div>
-    )
-}
+    );
+};

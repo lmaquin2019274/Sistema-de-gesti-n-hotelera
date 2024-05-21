@@ -9,6 +9,7 @@ export { useUserSettings } from './useUserSettings'
 //Hotel
 export { useHotels } from './useHotels'
 export { useHotelDetails } from './useHotelDetails'
+export { useHotelName } from './useHotelName'
 export { useDeleteHotel } from './useDelteHotel'
 export { useRestoreHotel } from './useRestoreHotel'
 export { useBadHotels } from './useBadHotels'
@@ -35,3 +36,9 @@ export { useNewEvent } from './useNewEvent'
 export { useBadEvents } from './useBadEvents'
 export { useDeleteEvent } from './useDeleteEvent'
 export { useRestoreEvent } from './useRestoreEvent'
+
+//Services
+export { useNewService } from './useNewService'
+export { useServiceDetails } from './useServiceDetails'
+export { useServiceHotel } from './useServiceHotel'
+export { useServiceUser } from './useServiceUser'

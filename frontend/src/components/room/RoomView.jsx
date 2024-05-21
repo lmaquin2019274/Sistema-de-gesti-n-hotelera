@@ -30,7 +30,7 @@ export const RoomView = ({ getRooms }) => {
                 <ImgRoom imgUrl={roomDetails.data.imgUrl} />
                 <div className="channel-description-box2">
                     <RoomDescription
-                        roomId={roomDetails.data.id}
+                        roomId={roomDetails.data._id}
                         name={roomDetails.data.name}
                         hotel={roomDetails.data.hotel}
                         available={roomDetails.data.available}
@@ -38,6 +38,7 @@ export const RoomView = ({ getRooms }) => {
                         capacity={roomDetails.data.capacity}
                         getRooms={getRooms}
                     />
+                    
                 </div>
             </div>
         </div>

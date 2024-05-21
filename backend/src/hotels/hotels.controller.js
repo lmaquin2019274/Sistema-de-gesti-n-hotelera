@@ -64,6 +64,21 @@ export const getHotelById = async (req, res) => {
     }
 };
 
+export const getHotelByName = async (req, res) => {
+    try {
+        const { name } = req.body;
+        console.log('hotel: ', name)
+        const hotel = await Hotel.findOne({ name: name });
+        if (!hotel) {
+            return res.status(404).send('Hotel not found');
+        }
+        return res.status(200).json(hotel);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Something went wrong');
+    }
+};
+
 // Actualizar un hotel por ID
 export const updateHotelById = async (req, res) => {
     try {

@@ -97,6 +97,17 @@ export const getHotels = async () => {
         }
     }
 }
+export const getHotelName = async (data) => {
+    console.log(data)
+    try{
+        return await apiClient.post('/hotel/name', data)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
 export const createHotel = async (data) => {
     try{
         return await apiClient.post('/hotel', data)
@@ -132,7 +143,6 @@ export const getBadHotels = async () => {
     }
 }
 export const deleteHotel = async (data, token) => {
-    console.log(data)
     try{
         return await apiClient.put('/hotel/delete', data, {
             headers: {
@@ -219,7 +229,6 @@ export const crateRoom = async (data, token) => {
     }
 }
 export const deleteRoom = async (data, token) => {
-    console.log(data)
     try{
         return await apiClient.put('/room/delete', data, {
             headers: {
@@ -282,7 +291,6 @@ export const getHotelEvents = async (hotelId) => {
     }
 }
 export const crateEvent = async (data, token) => {
-    console.log(data)
     try{
         return await apiClient.post('/event', data, {
             headers: {
@@ -307,7 +315,6 @@ export const getEventDetails = async (eventId) => {
     }
 }
 export const deleteEvent = async (data, token) => {
-    console.log(data)
     try{
         return await apiClient.put('/event/delete', data, {
             headers: {
@@ -329,6 +336,54 @@ export const restoreEvent = async (data, token) => {
             }
         });
         return response;
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+
+
+//Services
+export const crateService = async (data, token) => {
+    console.log(data)
+    try{
+        return await apiClient.post('/services', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getServiceDetails = async (id) => {
+    try{
+        return await apiClient.get(`/services/${id}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getServiceHotel = async (id) => {
+    try{
+        return await apiClient.get(`/services/hotel/${id}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const getServiUser = async (id) => {
+    try{
+        return await apiClient.get(`/services/user/${id}`)
     }catch(e){
         return{
             error: true,
