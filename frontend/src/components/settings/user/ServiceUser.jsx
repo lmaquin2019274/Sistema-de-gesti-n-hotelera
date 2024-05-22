@@ -20,17 +20,6 @@ export const ServiceUser = ({ servicesU }) => {
     return (
         <div className="channels-container">
             <span className="title-supreme">Your services</span>
-            <div className="buscador-box">
-                <input
-                    type="text"
-                    name="buscador"
-                    placeholder="Buscar..."
-                    className="buscador"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                />
-                <i className="fa-solid fa-magnifying-glass" ></i>
-            </div>
             {filteredServices.length > 0 ? (
                 filteredServices.map((c) => (
                     <ServiceCard

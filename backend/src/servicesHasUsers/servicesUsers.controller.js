@@ -39,28 +39,33 @@ export const createService = async (req, res) => {
 };
 
 export const listServiceId = async (req = request, res = response) => {
-    const { limite, desde } = req.query;
     const { id } = req.params;
-    const query = { estado: true, _id: id };
 
     try {
-        const [total, services] = await Promise.all([
-            Services.countDocuments(query),
-            Services.find(query)
-                .skip(Number(desde))
-                .limit(Number(limite))
-                .exec()
-        ]);
+        console.log(id);
 
-        res.status(200).json({
-            total,
-            services
-        });
+        const event = await Event.findOne({ estado: true, _id: id });
+        console.log(event);
+
+        if (event) {
+            return res.status(200).json(event);
+        }
+
+        const room = await Room.findOne({ estado: true, _id: id });
+        console.log(room);
+
+        if (room) {
+            return res.status(200).json(room);
+        }
+
+        return res.status(404).json({ error: 'No se encontró el evento o la habitación con el id proporcionado.' });
+
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Something went wrong' });
+        return res.status(500).json({ error: 'Something went wrong' });
     }
 };
+
 
 export const listServiceHotel = async (req = request, res = response) => {
     const { limite, desde } = req.query;
