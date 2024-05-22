@@ -95,31 +95,15 @@ export const listServiceHotel = async (req = request, res = response) => {
 };
 
 export const listServiceUser = async (req = request, res = response) => {
-    const { limite, desde } = req.params;
-    const { id } = req.body;
+    const { id } = req.params;
 
-    const user = await User.findById(id);
-
-    if (!user) {
-        return res.status(404).send('Hotel not found');
-    }
-
-
-    const query = { estado: true, user: user };
+    console.log(id)
 
     try {
-        const [total, services] = await Promise.all([
-            Services.countDocuments(query),
-            Services.find(query)
-                .skip(Number(desde))
-                .limit(Number(limite))
-                .exec()
-        ]);
 
-        res.status(200).json({
-            total,
-            services
-        });
+        const services = await Services.find({ estado: true, user: id });
+        res.status(200).json(services);
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Something went wrong' });

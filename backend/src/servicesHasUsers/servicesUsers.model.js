@@ -11,7 +11,6 @@ const servicesSchema = mongoose.Schema({
     },
     user: {
         type: String,
-        ref: 'User',
         required: true
     },
     reservations: [{

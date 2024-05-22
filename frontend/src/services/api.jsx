@@ -382,6 +382,7 @@ export const getServiceHotel = async (id) => {
     }
 }
 export const getServiUser = async (id) => {
+    console.log(id)
     try{
         return await apiClient.get(`/services/user/${id}`)
     }catch(e){

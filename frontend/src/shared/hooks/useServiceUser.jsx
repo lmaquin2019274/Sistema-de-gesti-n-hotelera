@@ -3,23 +3,23 @@ import {toast} from "react-hot-toast";
 import { getServiUser as getServiceso } from "../../services";
 
 export const useServiceUser = () => {
-    const [services, setServices] = useState();
+    const [servicesU, setServices] = useState();
 
-    const getServices = async (id) => {
+    const getServicesU = async (id) => {
         const responseData = await getServiceso(id)
 
         if(responseData.error){
             return toast.error(
                 responseData.e?.response?.data ||
-                'Error al cargar la información de la habitación'
+                'Error al cargar la información'
             )
         }
         setServices(responseData)
     }
 
     return{
-        services,
-        isFetching: !services,
-        getServices
+        servicesU,
+        isFetchingU: !servicesU,
+        getServicesU
     }
 }

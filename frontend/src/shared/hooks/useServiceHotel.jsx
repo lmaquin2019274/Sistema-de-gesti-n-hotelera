@@ -3,9 +3,9 @@ import {toast} from "react-hot-toast";
 import { getServiceHotel as getServiceso } from "../../services";
 
 export const useServiceHotel = () => {
-    const [services, setServices] = useState();
+    const [servicesH, setServicesH] = useState();
 
-    const getServices = async (id) => {
+    const getServicesH = async (id) => {
         const responseData = await getServiceso(id)
 
         if(responseData.error){
@@ -14,12 +14,12 @@ export const useServiceHotel = () => {
                 'Error al cargar la información de la habitación'
             )
         }
-        setServices(responseData)
+        setServicesH(responseData)
     }
 
     return{
-        services,
-        isFetching: !services,
-        getServices
+        servicesH,
+        isFetchingH: !servicesH,
+        getServicesH
     }
 }

@@ -67,6 +67,7 @@ export const PasswordSettings = () => {
 
         changePassword(formState.password.value, formState.newPassword.value)
     }
+    
   return (
     <form className="settings-form">
         {inputs.map((input) => (
