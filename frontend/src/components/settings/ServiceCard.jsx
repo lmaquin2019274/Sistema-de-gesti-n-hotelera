@@ -1,32 +1,39 @@
 import { useEffect, useState } from 'react';
-import { useServiceDetails, useHotelDetails } from "../../shared/hooks";
+import { useServiceDetails, useHotelDetails, useUserDetails2 } from "../../shared/hooks";
 import { LoadingSpinner } from '../LoadingSpinner';
 
 export const ServiceCard = ({
     service,
     hotel,
+    usuario,
     reservations,
     available,
 }) => {
     const { serviceDetails, isFetching: fetchserv, getServicesDetails } = useServiceDetails();
     const { hotelDetails, isFetching: fetchhote, getHotelsDetails } = useHotelDetails();
+    const { userDetails, isFetching, getUserDetails } = useUserDetails2();
+    const [executions, setExecutions] = useState(0);
+
 
     useEffect(() => {
-        getServicesDetails(service)
+        if (executions < 3) {
+        getServicesDetails(service);
         getHotelsDetails(hotel);
-    }, []);
+        getUserDetails(usuario);
+        setExecutions(executions + 1);
+        }
+    }, [executions]);
 
-    if (fetchserv || fetchhote) {
+    if (fetchserv || fetchhote || isFetching) {
         return <LoadingSpinner />;
     }
 
-    console.log(serviceDetails)
-    console.log(hotelDetails)
 
     return (
         <div className="channels-card">
             <span className="channels-card-title">{serviceDetails.data.name}</span>
             <span className="channels-card-text">{hotelDetails.data.name}</span>
+            <span className="channels-card-text">{userDetails.data.email}</span>
             <span className="channels-card-text">
                 {reservations.map(reservation => (
                     <div key={reservation._id}>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { EventDescription } from "./EventDescription";
 import { useEventsDetails, useHotelName } from "../../shared/hooks";
@@ -16,16 +16,20 @@ export const EventView = ({ getEvents }) => {
     const { id } = useParams();
     const { isFetching, getEventDetails, eventDetails } = useEventsDetails();
     const { hotelDetails, isFetchingss, getHotelName } = useHotelName();
+    const [executions, setExecutions] = useState(0);
 
     useEffect(() => {
-        getEventDetails(id);
+        if (executions < 2) {
+            getEventDetails(id);
+        }
     }, [id, getEventDetails]);
 
     useEffect(() => {
-        if (eventDetails?.data?.hotel) {
+        if (eventDetails?.data?.hotel && executions < 2) {
             getHotelName(eventDetails.data.hotel);
+            setExecutions(executions + 1);
         }
-    }, [eventDetails?.data?.hotel, getHotelName]);
+    }, [eventDetails?.data?.hotel, getHotelName, executions]);
 
     if (isFetching || isFetchingss) {
         return <LoadingSpinner />

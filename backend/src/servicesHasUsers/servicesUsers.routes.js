@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createService, listServiceId, listServiceHotel, listServiceUser} from "./servicesUsers.controller.js";
+import { createService, listServiceId, listServiceHotel, listServiceUser, factura} from "./servicesUsers.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -16,5 +16,7 @@ router.get("/:id", listServiceId);
 router.get("/hotel/:id", listServiceHotel);
 
 router.get("/user/:id", listServiceUser);
+
+router.put("/",[validarJWT], factura);
 
 export default router;

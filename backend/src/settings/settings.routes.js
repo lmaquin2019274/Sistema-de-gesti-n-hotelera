@@ -1,12 +1,14 @@
 import {Router} from "express";
 import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar-jwt.js";
-import { getUserSetting, usuariosPut, passwordPatch, usuariosUpdate } from "./settingsUser.controller.js";
+import { getUserSetting, usuariosPut, passwordPatch, usuariosUpdate, getUserSettingSolo } from "./settingsUser.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router()
 
 router.post('/user', getUserSetting)
+
+router.post('/solo', getUserSettingSolo)
 
 router.put('/user',
     [

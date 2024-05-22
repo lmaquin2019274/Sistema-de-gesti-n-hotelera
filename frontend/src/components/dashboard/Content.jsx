@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Route, Routes } from "react-router-dom";
 import { Settings } from "../settings/Settings";
 import { Hotels } from "../hotel/Hotels";
@@ -13,6 +12,7 @@ import { Home } from "../Home";
 import { HotelSettings } from '../settings/HotelSettings'
 import { EventSettings } from '../settings/EventSettings'
 import { RoomSettings } from '../settings/RoomSettings'
+import { ServiceSettings } from '../settings/ServiceSettings'
 
 export const Content = ({hotels, getHotels, rooms, getRooms, hotelRooms, events, getEvents, hotelEvents}) => {
 
@@ -24,6 +24,7 @@ export const Content = ({hotels, getHotels, rooms, getRooms, hotelRooms, events,
                 <Route path="hotelSettings" element={<HotelSettings/>}/>
                 <Route path="eventSettings" element={<EventSettings/>}/>
                 <Route path="roomSettings" element={<RoomSettings/>}/>
+                <Route path="serviceSettings" element={<ServiceSettings/>}/>
                 <Route path="hotel" element={<Hotels hotels={hotels}/>}/>
                 <Route path="hotel/:id" element={<HotelView getHotels={getHotels}/>}/>
                 <Route path="room" element={<Rooms rooms={rooms}/>}/>

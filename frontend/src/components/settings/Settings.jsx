@@ -7,16 +7,15 @@ import { ServiceUser } from "./user/ServiceUser";
 import { ToHotelSettings } from "./hotel/ToHotelSettings";
 import { ToRoomSettings } from "./room/ToRoomSettings"
 import { ToEventSettings } from "./event/ToEventSettings"
-import { useServiceUser, useServiceHotel } from "../../shared/hooks";
+import { ToServiceSettings } from "./hotel/ToServiceSettings";
+import { useServiceUser } from "../../shared/hooks";
 import { useEffect } from "react";
 
 export const Settings = () => {
     const { userSettings, isFetching, saveSettings } = useUserSettings();
     const { servicesU, isFetchingU, getServicesU } = useServiceUser();
-    const { servicesH, isFetchingH, getServicesH } = useServiceHotel();
 
     const userId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).id : null;
-    const hotelId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).hotel : null;
 
     useEffect(() => {
         if (userId) {
@@ -64,6 +63,7 @@ export const Settings = () => {
                         <ToHotelSettings />
                         <ToRoomSettings />
                         <ToEventSettings />
+                        <ToServiceSettings />
                     </div>
                 </div>
             ) : (

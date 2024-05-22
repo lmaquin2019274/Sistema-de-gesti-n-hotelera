@@ -54,6 +54,16 @@ export const putUserSettings = async (data) => {
         }
     }
 }
+export const getUserSolo = async (data) => {
+    try{
+        return await apiClient.post('/settings/solo', data)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
 export const getUserSetting = async (data) => {
     try{
         return await apiClient.post('/settings/user', data)
@@ -382,9 +392,23 @@ export const getServiceHotel = async (id) => {
     }
 }
 export const getServiUser = async (id) => {
-    console.log(id)
     try{
         return await apiClient.get(`/services/user/${id}`)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+export const factura = async (data, token) => {
+    console.log(data)
+    try{
+        return await apiClient.put('/services', data, {
+            headers: {
+                'x-token': `${token}`
+            }
+        });
     }catch(e){
         return{
             error: true,

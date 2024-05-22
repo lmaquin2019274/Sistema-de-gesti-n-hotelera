@@ -24,6 +24,9 @@ const servicesSchema = mongoose.Schema({
     extra:{
         type: String
     },
+    total:{
+        type: Number,
+    },
     estado:{
         type: Boolean,
         default: true

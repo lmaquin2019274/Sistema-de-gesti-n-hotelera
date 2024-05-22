@@ -21,6 +21,17 @@ export const getUserSetting = async (req, res) => {
     }
 }
 
+export const getUserSettingSolo = async (req, res) => {
+  try{
+      const { userId } = req.body
+
+      const user = await User.find({ estado: true, _id: userId });
+        res.status(200).json(user);
+      }catch(e){
+      return res.status(500).send('Something went wrong')
+  }
+}
+
 export const usuariosUpdate = async (req, res) => {
     const { email, role, hotel } = req.body;
 

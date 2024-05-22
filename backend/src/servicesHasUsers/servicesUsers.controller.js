@@ -2,8 +2,6 @@ import { response, request } from 'express';
 import Services from './servicesUsers.model.js';
 import Room from '../rooms/rooms.model.js';
 import Event from '../events/events.model.js';
-import Hotel from '../hotels/hotels.model.js'
-import User from '../users/user.model.js'
 
 export const createService = async (req, res) => {
     const { service, hotel, user, reservations } = req.body;
@@ -68,31 +66,15 @@ export const listServiceId = async (req = request, res = response) => {
 
 
 export const listServiceHotel = async (req = request, res = response) => {
-    const { limite, desde } = req.query;
     const { id } = req.params;
 
-    const hotel = await Hotel.findById(id);
-
-    if (!hotel) {
-        return res.status(404).send('Hotel not found');
-    }
-
-
-    const query = { estado: true, hotel: hotel };
+    console.log(id)
 
     try {
-        const [total, services] = await Promise.all([
-            Services.countDocuments(query),
-            Services.find(query)
-                .skip(Number(desde))
-                .limit(Number(limite))
-                .exec()
-        ]);
 
-        res.status(200).json({
-            total,
-            services
-        });
+        const services = await Services.find({ estado: true, hotel: id });
+        res.status(200).json(services);
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Something went wrong' });
@@ -112,5 +94,45 @@ export const listServiceUser = async (req = request, res = response) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Something went wrong' });
+    }
+};
+
+export const factura = async (req, res) => {
+    const { id, extra, total, service } = req.body;
+
+    try {
+        let isServiceUpdated = false;
+
+        const isEvent = await Event.findByIdAndUpdate(service, { available: true }, { new: true });
+        console.log(isEvent)
+        if (isEvent) {
+            isServiceUpdated = true;
+        } else {
+            const isRoom = await Room.findByIdAndUpdate(service, { available: true }, { new: true });
+            console.log(isRoom)
+            if (isRoom) {
+                isServiceUpdated = true;
+            }
+        }
+
+        if (!isServiceUpdated) {
+            console.error('Service not found');
+            return res.status(404).json({ msg: 'Service not found' });
+        }
+
+
+        const updatedEvent = await Services.findByIdAndUpdate(id, {
+            extra,
+            total,
+            estado: false
+        }, { new: true });
+
+        if (!updatedEvent) {
+            return res.status(404).json({ error: "Service not found" });
+        }
+
+        res.status(200).json({ updatedEvent });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 };
