@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "664d0c33672ca4b790498ca2"
+  },
+  "service": "664bd9e26e8783dfd7ec643c",
+  "hotel": "664a6d4dfeee966e99fcba5a",
+  "user": "6647faff9eebdd4d633a31ff",
+  "reservations": [
+    {
+      "endDate": {
+        "$date": "2024-05-24T06:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "664d0c33672ca4b790498ca3"
+      }
+    }
+  ],
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664d0c80672ca4b790498cab"
+  },
+  "service": "664bda066e8783dfd7ec643f",
+  "hotel": "664a6d4dfeee966e99fcba5a",
+  "user": "6647faff9eebdd4d633a31ff",
+  "reservations": [
+    {
+      "endDate": {
+        "$date": "2024-05-28T06:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "664d0c80672ca4b790498cac"
+      }
+    }
+  ],
+  "estado": true,
+  "__v": 0
+}]

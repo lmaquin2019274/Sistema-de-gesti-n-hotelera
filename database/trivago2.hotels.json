@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "663256de2152cb73cca5477f"
+  },
+  "name": "Hilton Copacabana",
+  "location": "Rio de Janeiro, Brasil",
+  "category": "Standar",
+  "comforts": "Awesome views,  pool on the roof, parking, spa, pet-friendly, restaurant, beach, hotel bar, air aconditioned",
+  "capacity": "1-4 people",
+  "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/531848790.jpg?k=3cc1d2474cce6192dd0b396c8314603a65ff4ef7c8db2891bd1806e17e999e5a&o=&hp=1",
+  "coordenadas": "-22.96423284379043, -43.17325377521141",
+  "__v": 0,
+  "estado": true
+},
+{
+  "_id": {
+    "$oid": "663256ed2152cb73cca54781"
+  },
+  "name": "45 Times Square Hotel",
+  "location": "USA, New York",
+  "category": "Deluxe",
+  "comforts": "A unique enclave, great location, ideal for all travelers, gym, free wifi, air conditioned",
+  "capacity": "1-6 people",
+  "imgUrl": "https://room-mate-grace-new-york.hotelmix.es/data/Photos/OriginalPhoto/14348/1434837/1434837772/45-Times-Square-Hotel-New-York-Exterior.JPEG",
+  "coordenadas": "40.75771546756702, -73.9838331746106",
+  "__v": 0,
+  "estado": true
+},
+{
+  "_id": {
+    "$oid": "663257012152cb73cca54783"
+  },
+  "name": "Leonard Royal",
+  "location": "London, England",
+  "category": "Premium",
+  "comforts": "Eco-friendly, clean and modern, free wifi, pool, spa, air aconditioned, restaurant, hotel bar, gym",
+  "capacity": "1-2 people",
+  "imgUrl": "https://ik.imgkit.net/3vlqs5axxjf/external/https://www.cfmedia.vfmleonardo.com/imageRepo/7/0/126/24/170/Leonardo_Royal_London_City_Exterior_Dusk_O.jpg?tr=w-1200%2Cfo-auto",
+  "coordenadas": "51.51186483587157, -0.07151287401822566",
+  "__v": 0,
+  "estado": true
+},
+{
+  "_id": {
+    "$oid": "663265472152cb73cca547b6"
+  },
+  "name": "Al Ponte Vecchio",
+  "location": "Florence, Italy",
+  "category": "Deluxe",
+  "comforts": "Panoramic views, terrace on the roof, free wifi, pet-friendly, air aconditioned, restaurant, hotel bar, safe-deposit box",
+  "capacity": "1-4 people",
+  "imgUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/340220011.jpg?k=c6bf28529b9550b1a774ed740f277df192495fbf006b560fab9fc50e32238534&o=&hp=1",
+  "coordenadas": "43.76761609313986, 11.252546296804972",
+  "__v": 0,
+  "estado": true
+},
+{
+  "_id": {
+    "$oid": "664a6d4dfeee966e99fcba5a"
+  },
+  "name": "Parque San Ángel",
+  "location": "Guatemala city, Guatemala",
+  "category": "Standar",
+  "comforts": "Pool, gym, woods, social room, a market, bikeway",
+  "capacity": "1-5 People",
+  "imgUrl": "https://citymap.com.gt/wp-content/uploads/2020/11/PSA_Image2.jpg",
+  "coordenadas": "14.674801412361361, -90.50619102773683",
+  "estado": true,
+  "__v": 0
+}]

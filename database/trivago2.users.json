@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "6647faff9eebdd4d633a31ff"
+  },
+  "email": "luciano@email.com",
+  "username": "lmao",
+  "password": "$2a$10$9SxA1PFiN2rj5GlZzkK5bO6ajvt8/Sto9ra0Sv1mMUJxzXx85La3e",
+  "role": "CLIENT_ROLE",
+  "__v": 0,
+  "hotel": null
+},
+{
+  "_id": {
+    "$oid": "66495d04994595d4101591e9"
+  },
+  "email": "miluz@email.com",
+  "username": "miluz",
+  "password": "$2a$10$gaTGjGVokKV7PjKdpsTunOlJFEcaxwj0rnz1xAk/MImT1DGajJR1O",
+  "role": "MANAGER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664a7807f9b8a6d17b0527bd"
+  },
+  "email": "admin@email.com",
+  "username": "admin",
+  "password": "$2a$10$NcypHN6ENeUHKSSTfMlcwOriDAjmmUr.D2GB8YGxehaCc5YWK8N/i",
+  "role": "ADMIN_ROLE",
+  "__v": 0,
+  "hotel": {
+    "$oid": "664a6d4dfeee966e99fcba5a"
+  }
+}]
